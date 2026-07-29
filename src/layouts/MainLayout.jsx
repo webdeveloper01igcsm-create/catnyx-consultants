@@ -3,13 +3,15 @@ import { Outlet, useLocation } from "react-router-dom";
 import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
 import BookingModal from "../components/Common/BookingModal";
+import { useLenis } from "../components/LenisProvider";
 
 const MainLayout = () => {
   const [bookingOpen, setBookingOpen] = useState(false);
   const location = useLocation();
+  const { scrollToTop } = useLenis();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    scrollToTop();
   }, [location.pathname]);
 
   const openBooking = () => setBookingOpen(true);
