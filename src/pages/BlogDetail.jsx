@@ -26,7 +26,7 @@ const BlogDetail = () => {
   if (!blog) {
     return (
       <div className="mt-20 min-h-[60vh] flex items-center justify-center bg-gray-50 px-4">
-        <div className="text-center max-w-md bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+        <div className="container max-w-md mx-auto text-center bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
           <Building2 className="w-12 h-12 text-primary mx-auto mb-4" />
           <h1 className="text-2xl font-extrabold text-gray-900 mb-2 font-cabinet">Article Not Found</h1>
           <p className="text-sm text-gray-500 mb-6">
@@ -60,7 +60,7 @@ const BlogDetail = () => {
 
       {/* SIMPLIFIED HEADER BANNER SECTION */}
       <section className="mt-16 lg:mt-20 bg-gradient-to-b from-blue-50/60 via-white to-white py-12 lg:py-16 border-b border-gray-100">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12">
+        <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-left">
           {/* Back button */}
           <Link
             to="/blogs"
@@ -113,7 +113,7 @@ const BlogDetail = () => {
       </section>
 
       {/* FEATURED STOCK IMAGE */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 pt-8">
+      <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
@@ -125,16 +125,16 @@ const BlogDetail = () => {
             alt={blog.title}
             className="w-full h-full object-cover"
             onError={(e) => {
-              e.target.src = "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80";
+              e.target.src = "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=1200&q=80";
             }}
           />
         </motion.div>
       </div>
 
-      {/* ARTICLE CONTENT */}
+      {/* ARTICLE CONTENT SECTION */}
       <section className="bg-white py-10 sm:py-14">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-12">
-          {/* Highlights Box */}
+        <div className="container max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-left">
+          {/* Executive Summary Box */}
           <div className="bg-blue-50/60 border border-blue-100 rounded-xl p-5 mb-8">
             <h3 className="text-base font-bold text-gray-900 mb-2 flex items-center gap-2 font-cabinet">
               <CheckCircle2 className="w-4 h-4 text-primary" /> Executive Summary
@@ -145,14 +145,14 @@ const BlogDetail = () => {
           </div>
 
           {/* Body Content */}
-          <article className="prose prose-lg max-w-none text-gray-700 leading-relaxed">
+          <article className="prose prose-lg max-w-none text-gray-700 leading-relaxed text-left">
             {blog.content ? (
               <div
-                className="blog-content"
+                className="blog-content text-left"
                 dangerouslySetInnerHTML={{ __html: blog.content }}
               />
             ) : (
-              <div>
+              <div className="text-left">
                 <p className="text-base text-gray-800 mb-6">{blog.excerpt}</p>
                 <p>
                   Setting up a business in the UAE requires strategic planning and a clear understanding of local regulations.
@@ -188,7 +188,7 @@ const BlogDetail = () => {
 
       {/* RELATED POSTS SECTION */}
       <section className="bg-slate-50 py-14 border-t border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+        <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between mb-8">
             <div>
               <h2 className="text-xl sm:text-2xl font-bold text-gray-900 font-cabinet">
@@ -243,7 +243,7 @@ const BlogDetail = () => {
 
       {/* CTA SECTION */}
       <section className="bg-primary py-14 text-white text-center">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-12">
+        <div className="container max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-2xl font-bold mb-3 font-cabinet">
             Need Expert UAE Business Setup Guidance?
           </h2>
@@ -263,4 +263,4 @@ const BlogDetail = () => {
 };
 
 export default BlogDetail;
-
+
