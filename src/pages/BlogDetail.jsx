@@ -58,78 +58,75 @@ const BlogDetail = () => {
         <meta name="description" content={blog.excerpt} />
       </Helmet>
 
-      {/* SIMPLIFIED HEADER BANNER SECTION */}
-      <section className="mt-16 lg:mt-20 bg-gradient-to-b from-blue-50/60 via-white to-white py-12 lg:py-16 border-b border-gray-100">
-        <div className="container   mx-auto px-4 sm:px-6 lg:px-8 text-left">
-          {/* Back button */}
-          <Link
-            to="/blogs"
-            className="inline-flex items-center gap-2 text-xs font-semibold text-primary hover:text-primary-dark transition-all mb-6 bg-white border border-gray-200 px-3.5 py-1.5 rounded-full shadow-2xs"
-          >
-            <ArrowLeft className="w-3.5 h-3.5" /> Back to Blogs
-          </Link>
+      {/* HERO BANNER WITH 50VH IMAGE AND GRADIENT OVERLAY */}
+      <section className="mt-16 lg:mt-20 relative w-full h-[50vh] min-h-[420px] max-h-[600px] overflow-hidden bg-slate-950 text-white flex items-end">
+        {/* Background Image */}
+        <img
+          src={blog.image}
+          alt={blog.title}
+          className="absolute inset-0 w-full h-full object-top object-cover"
+          onError={(e) => {
+            e.target.src = "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=1200&q=80";
+          }}
+        />
 
-          {/* Category, Date & Read Time */}
-          <div className="flex flex-wrap items-center gap-3 text-xs text-gray-500 mb-4">
-            <span className="bg-primary text-white px-3 py-1 rounded-full font-bold">
-              {blog.category || "UAE Business"}
-            </span>
-            <span className="flex items-center gap-1 bg-gray-100 px-2.5 py-1 rounded-md text-gray-600">
-              <Clock className="w-3.5 h-3.5 text-primary" /> {blog.readTime || "5 min read"}
-            </span>
-            <span className="flex items-center gap-1 bg-gray-100 px-2.5 py-1 rounded-md text-gray-600">
-              <Calendar className="w-3.5 h-3.5 text-primary" /> {blog.date}
-            </span>
-          </div>
+        {/* Gradient Overlay over Image */}
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-black/30"></div>
 
-          {/* Main Title */}
-          <h1 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 leading-tight mb-6 font-cabinet">
-            {blog.title}
-          </h1>
+        {/* Content overlaid on top of image */}
+        <div className="relative z-10 w-full py-8 lg:py-12">
+          <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-left">
+            {/* Back button */}
+            <Link
+              to="/blogs"
+              className="inline-flex items-center gap-2 text-xs font-semibold text-white/90 hover:text-white transition-all mb-4 bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 px-3.5 py-1.5 rounded-full shadow-sm"
+            >
+              <ArrowLeft className="w-3.5 h-3.5" /> Back to Blogs
+            </Link>
 
-          {/* Author info row */}
-          <div className="flex items-center justify-between pt-4 border-t border-gray-200/80">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-extrabold text-sm shadow-xs">
-                {blog.author ? blog.author.charAt(0) : "D"}
-              </div>
-              <div>
-                <p className="text-sm font-bold text-gray-900">{blog.author || "Desert Consultants Team"}</p>
-                <p className="text-xs text-gray-500">{blog.authorRole || "Senior Business Setup Advisor"}</p>
-              </div>
+            {/* Category, Date & Read Time */}
+            <div className="flex flex-wrap items-center gap-3 text-xs text-white/80 mb-3">
+              <span className="bg-primary text-white px-3 py-1 rounded-full font-bold shadow-sm">
+                {blog.category || "UAE Business"}
+              </span>
+              <span className="flex items-center gap-1 bg-black/40 backdrop-blur-md px-2.5 py-1 rounded-md text-white/90 border border-white/10">
+                <Clock className="w-3.5 h-3.5 text-blue-300" /> {blog.readTime || "5 min read"}
+              </span>
+              <span className="flex items-center gap-1 bg-black/40 backdrop-blur-md px-2.5 py-1 rounded-md text-white/90 border border-white/10">
+                <Calendar className="w-3.5 h-3.5 text-blue-300" /> {blog.date}
+              </span>
             </div>
 
-            {/* Share button */}
-            <button
-              onClick={handleCopyLink}
-              className="inline-flex items-center gap-1.5 text-xs font-semibold bg-white border border-gray-200 hover:bg-gray-50 text-gray-700 px-3 py-1.5 rounded-lg shadow-2xs transition-all cursor-pointer"
-              title="Copy link to clipboard"
-            >
-              {copied ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5 text-gray-500" />}
-              {copied ? "Link Copied!" : "Share Article"}
-            </button>
+            {/* Main Title Over Image */}
+            <h1 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-6 font-cabinet drop-shadow-md">
+              {blog.title}
+            </h1>
+
+            {/* Author info row */}
+            <div className="flex items-center justify-between pt-4 border-t border-white/15">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-extrabold text-sm shadow-md border border-white/20">
+                  {blog.author ? blog.author.charAt(0) : "D"}
+                </div>
+                <div>
+                  <p className="text-sm font-bold text-white">{blog.author || "Desert Consultants Team"}</p>
+                  <p className="text-xs text-blue-200">{blog.authorRole || "Senior Business Setup Advisor"}</p>
+                </div>
+              </div>
+
+              {/* Share button */}
+              <button
+                onClick={handleCopyLink}
+                className="inline-flex items-center gap-1.5 text-xs font-semibold bg-white/15 hover:bg-white/25 text-white border border-white/20 backdrop-blur-md px-3 py-1.5 rounded-lg shadow-sm transition-all cursor-pointer"
+                title="Copy link to clipboard"
+              >
+                {copied ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5 text-white/80" />}
+                {copied ? "Link Copied!" : "Share Article"}
+              </button>
+            </div>
           </div>
         </div>
       </section>
-
-      {/* FEATURED STOCK IMAGE */}
-      <div className="container   mx-auto px-4 sm:px-6 lg:px-8 pt-8">
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4 }}
-          className="rounded-xl overflow-hidden shadow-md border border-gray-100 aspect-[16/9] bg-gray-100"
-        >
-          <img
-            src={blog.image}
-            alt={blog.title}
-            className="w-full h-full object-cover"
-            onError={(e) => {
-              e.target.src = "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=1200&q=80";
-            }}
-          />
-        </motion.div>
-      </div>
 
       {/* ARTICLE CONTENT SECTION */}
       <section className="bg-white py-10 sm:py-14">

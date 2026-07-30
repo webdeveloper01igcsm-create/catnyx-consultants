@@ -50,7 +50,7 @@ import b4_human from "../assets/b4_human.png"
 import b5_human from "../assets/b5_human.png"
 import b6_human from "../assets/b6_human.png"
 
-
+import sirimg from "../assets/sir.jpg"
 
 
 export const heroData = {
@@ -297,7 +297,7 @@ export const ceoData = {
     "At Desert Consultants, our leadership is committed to making entrepreneurship simple and accessible for businesses across the UAE. As one of the trusted business setup consultants in Dubai, we have helped entrepreneurs and investors navigate every stage of their business journey with confidence. Our expertise in company formation in UAE, trade licensing, and business advisory ensures clients receive reliable, transparent, and tailored solutions to achieve long-term success.",
   name: "Mr. Umair Riaz",
   role: "CEO & Founder, Desert Consultants",
-  image: "https://www.catnyxconsultants.com/images/umair-riaz.png",
+  image: sirimg,
 };
 
 export const testimonials = [
