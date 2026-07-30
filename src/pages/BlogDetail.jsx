@@ -60,7 +60,7 @@ const BlogDetail = () => {
 
       {/* SIMPLIFIED HEADER BANNER SECTION */}
       <section className="mt-16 lg:mt-20 bg-gradient-to-b from-blue-50/60 via-white to-white py-12 lg:py-16 border-b border-gray-100">
-        <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-left">
+        <div className="container   mx-auto px-4 sm:px-6 lg:px-8 text-left">
           {/* Back button */}
           <Link
             to="/blogs"
@@ -113,7 +113,7 @@ const BlogDetail = () => {
       </section>
 
       {/* FEATURED STOCK IMAGE */}
-      <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+      <div className="container   mx-auto px-4 sm:px-6 lg:px-8 pt-8">
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
@@ -133,7 +133,7 @@ const BlogDetail = () => {
 
       {/* ARTICLE CONTENT SECTION */}
       <section className="bg-white py-10 sm:py-14">
-        <div className="container max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-left">
+        <div className="container   mx-auto px-4 sm:px-6 lg:px-8 text-left">
           {/* Executive Summary Box */}
           <div className="bg-blue-50/60 border border-blue-100 rounded-xl p-5 mb-8">
             <h3 className="text-base font-bold text-gray-900 mb-2 flex items-center gap-2 font-cabinet">
@@ -188,7 +188,7 @@ const BlogDetail = () => {
 
       {/* RELATED POSTS SECTION */}
       <section className="bg-slate-50 py-14 border-t border-gray-200">
-        <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container   mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between mb-8">
             <div>
               <h2 className="text-xl sm:text-2xl font-bold text-gray-900 font-cabinet">
@@ -243,7 +243,7 @@ const BlogDetail = () => {
 
       {/* CTA SECTION */}
       <section className="bg-primary py-14 text-white text-center">
-        <div className="container max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="container   mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-2xl font-bold mb-3 font-cabinet">
             Need Expert UAE Business Setup Guidance?
           </h2>
