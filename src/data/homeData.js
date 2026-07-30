@@ -24,6 +24,13 @@ import client16 from "../assets/c16.jpg"
 import client17 from "../assets/c17.jpg"
 import client18 from "../assets/c18.png"
 
+import review1 from "../assets/r1.png"
+import review2 from "../assets/r2.jpg"
+import review3 from "../assets/r3.png"
+import review4 from "../assets/r4.png"
+import review5 from "../assets/r5.png"
+import review6 from "../assets/r6.png"
+import review7 from "../assets/r7.jpg"
 
 
 
@@ -125,24 +132,81 @@ export const stats = [
 ];
 
 export const clients = [
-  { name: "Globexia International", img: "https://www.catnyxconsultants.com/storage/clients/84q8VwtgQSV5MS6FvqAmliYKbHgcuBbDve1LWg1U.png" },
-  { name: "Parth Consultancy", img: "https://www.catnyxconsultants.com/storage/clients/oLxJr3Uf5GYvYmPDYjrgS5LX0JYjX7ByTfJY4EcZ.png" },
-  { name: "Global Aspire", img: "https://www.catnyxconsultants.com/storage/clients/GWh2oK0a009q9j1cY1giOKAAedVGsIkIBOzZM7Do.png" },
-  { name: "Vayora Tourism", img: "https://www.catnyxconsultants.com/storage/clients/e8e4WXC95m4pvMQhyeWySzSMLcoM24ReC5J8VCGu.jpg" },
-  { name: "Ce-Co", img: "https://www.catnyxconsultants.com/storage/clients/4cLyJuKthrfTsEyFI8zzSjZ927EA6ATdYVrRyaHq.jpg" },
-  { name: "Arvix Nurturing Nature", img: "https://www.catnyxconsultants.com/storage/clients/uN0DRxJ5rsO68AP4UYT2zz6tYuJFue6tns7nB5zq.jpg" },
-  { name: "Al Falah Global Traders", img: "https://www.catnyxconsultants.com/storage/clients/RMMC28ZO6MTN24bmSlBkOZQSt0a8TSBF7MMQqCJF.jpg" },
-  { name: "Villora", img: "https://www.catnyxconsultants.com/storage/clients/8bxnEROsEXrORhSLDZRKIr3VXeXrK8BEVh3wxbbh.jpg" },
-  { name: "RSGO International Trading", img: "https://www.catnyxconsultants.com/storage/clients/Qv6PfCxkHtThX4Aa7d1HAKcL1l0nyT6jDvLnyEmk.jpg" },
-  { name: "NibrasX", img: "https://www.catnyxconsultants.com/storage/clients/Tl4sVxQOA9AzPfwgIXhwVqLBD3m19HKLmODIXdwv.png" },
-  { name: "TruGo", img: "https://www.catnyxconsultants.com/storage/clients/9iQsITOMqJLPiLf5nuCJriLsNorcmd5HChA38dnB.png" },
-  { name: "DS Group", img: "https://www.catnyxconsultants.com/storage/clients/863GjviNJJPzTBYZctxeLLnd0OxeGnvE0VB8uKky.jpg" },
-  { name: "DGS Real Estate Dubai", img: "https://www.catnyxconsultants.com/storage/clients/h59d3FwnapomHwgGywJJrTY4Zkph4SrwjqVRC8ED.jpg" },
-  { name: "XYNTAC Solutions IT Consultants", img: "https://www.catnyxconsultants.com/storage/clients/iH1bkCtslSFypzxTYaP0nxkPTnry3XeZZNG5vqLM.jpg" },
-  { name: "Cerita Haircare", img: "https://www.catnyxconsultants.com/storage/clients/N8PxEUeMQZRoeUVtXw7Sbo1xgtPgsvC2UHrDYMdi.jpg" },
-  { name: "Solid Walls", img: "https://www.catnyxconsultants.com/storage/clients/NTIRkryJ0ldxUVlQ6xGDQLzHTcoSlkPs2trRHjWX.jpg" },
-  { name: "Universal Consultancy Global", img: "https://www.catnyxconsultants.com/storage/clients/dzXfedDhLWioaMxLkmoxvIB5P9xwB0ceSwC6K45W.jpg" },
-  { name: "White Stone Corporate Group", img: "https://www.catnyxconsultants.com/storage/clients/jkaw7wfAZv71r8X8A6JLnFjOKFxZPqZB7ReMZ4fG.png" },
+  {
+    name: "Globexia International",
+    img: client1
+  },
+  {
+    name: "Parth Consultancy",
+    img: client2
+  },
+  {
+    name: "Global Aspire",
+    img: client3
+  },
+  {
+    name: "Vayora Tourism",
+    img: client4
+  },
+  {
+    name: "Ce-Co",
+    img: client5
+  },
+
+  {
+    name: "Arvix Nurturing Nature",
+    img: client6
+  },
+  {
+    name: "Al Falah Global Traders",
+    img: client7
+  },
+  {
+    name: "Villora",
+    img: client8
+  },
+  {
+    name: "RSGO International Trading",
+    img: client9
+  },
+  {
+    name: "NibrasX",
+    img: client10
+  },
+  {
+    name: "TruGo",
+    img: client11
+  },
+  {
+    name: "DS Group",
+    img: client12
+  },
+  {
+    name: "DGS Real Estate Dubai",
+    img: client13
+
+  },
+  {
+    name: "XYNTAC Solutions IT Consultants",
+    img: client14
+
+  },
+  {
+    name: "Cerita Haircare",
+    img: client15
+  },
+  {
+    name: "Solid Walls",
+    img: client16
+  },
+  {
+    name: "Universal Consultancy Global",
+    img: client17
+  },
+  {
+    name: "White Stone Corporate Group",
+    img: client18
+  },
 ];
 
 export const packages = [
@@ -223,7 +287,7 @@ export const testimonials = [
     name: "Om Jaiswal",
     source: "Google Review",
     rating: 5,
-    avatar: "https://www.catnyxconsultants.com/storage/testimonials/kYznQnftgdhQSqB4mVhCGrgMr5XGH4FypAK5Wci1.png",
+    avatar: review1,
     review:
       "Catnyx Consultants stands out for their commitment and attention to detail. They take the time to understand your needs and deliver quality results. The entire process was smooth and well-managed.",
   },
@@ -231,7 +295,7 @@ export const testimonials = [
     name: "Shraddha Kapoor",
     source: "IBM review",
     rating: 5,
-    avatar: "https://www.catnyxconsultants.com/storage/testimonials/lVzeoTlLTyt8olHZHBgPUThlOnHmqRg511M2I9YE.jpg",
+    avatar: review2,
     review:
       "Catnyx looks like a legitimate operating business with visible Dubai presence, but from currently accessible public data, it's harder to confirm reputation independently than for more established firms. It may be worth considering, but only after checking license validity, transparent pricing, and off-site reviews. For UAE business setup, consultant transparency often matters more than marketing.",
   },
@@ -239,14 +303,14 @@ export const testimonials = [
     name: "Tahira Shahzad",
     source: "Google Review",
     rating: 5,
-    avatar: "https://www.catnyxconsultants.com/storage/testimonials/UY9h7rXxPEKmrVsavwi0nZ3B6JoAR4g63zsMvn1G.png",
+    avatar: review3,
     review: "Highly professional and knowledgeable, provided clear strategies that actually worked.",
   },
   {
     name: "Afzal Zain",
     source: "Google Review",
     rating: 5,
-    avatar: "https://www.catnyxconsultants.com/storage/testimonials/FnanLfelghPhz6BBfK92cOlIoYe2OVMTIuHjOcfx.png",
+    avatar: review4,
     review:
       "I had an excellent experience with Catnyx when I got my business license. The service was fast, efficient, and their team was incredibly helpful throughout the process. They made everything smooth and easy to understand, and I really appreciate their professional approach. Highly recommend them for anyone looking to get their business license with great support!",
   },
@@ -254,7 +318,7 @@ export const testimonials = [
     name: "Shahbaz Alam",
     source: "Google Review",
     rating: 5,
-    avatar: "https://www.catnyxconsultants.com/storage/testimonials/BHbnLhn2zVzml4NgEgzktUs5s76h98uUfzDDhCMF.png",
+    avatar: review5,
     review:
       "For anyone looking for professional business setup services, Catnyx Consultants is the right choice. Their team guided me perfectly. The best company setup consultant in the region.",
   },
@@ -262,7 +326,7 @@ export const testimonials = [
     name: "Mahedi Hasan Datari",
     source: "Google Review",
     rating: 4,
-    avatar: "https://www.catnyxconsultants.com/storage/testimonials/nJg7z4Jtib08pCiV1qig2x3csKWksaKATa7kB3O5.png",
+    avatar: review6,
     review:
       "Looking to start a company? Catnyx Consultants is the best company setup consultant out there. They guided me through the entire business setup process and made everything easy. Big thanks to Mr. Umair!",
   },
@@ -270,7 +334,7 @@ export const testimonials = [
     name: "My Stayinn Luxury",
     source: "Google Review",
     rating: 5,
-    avatar: "https://www.catnyxconsultants.com/storage/testimonials/DNbgv1Kml8VMapZ3C4wzuK4ZUe29SPgtayAP4DBf.jpg",
+    avatar: review7,
     review:
       "Catnyx Consultants provided outstanding assistance with opening a corporate bank account for My Stayinn Luxury in the UAE. Their team was knowledgeable, professional, and guided us through the process seamlessly. Highly recommended for anyone seeking corporate banking solutions in the UAE.",
   },
