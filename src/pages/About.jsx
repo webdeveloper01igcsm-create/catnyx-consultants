@@ -50,7 +50,7 @@ const About = () => {
       </section>
 
       {/* WELCOME SECTION */}
-      <section className="bg-white py-16 sm:py-20 lg:py-24">
+      <section className="bg-white py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
@@ -71,7 +71,7 @@ const About = () => {
       </section>
 
       {/* STATS BAR */}
-      <section className="bg-primary py-12 sm:py-16">
+      <section className="bg-primary py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 text-center divide-x divide-white/20">
             {aboutStats.map((stat, i) => (
@@ -85,7 +85,7 @@ const About = () => {
       </section>
 
       {/* WHAT MAKES US DIFFERENT */}
-      <section className="bg-white py-16 sm:py-20 lg:py-24">
+      <section className="bg-white py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
             <div>
@@ -114,7 +114,7 @@ const About = () => {
       </section>
 
       {/* MEET THE TEAM */}
-      <section className="bg-white py-16 sm:py-20 lg:py-24">
+      <section className="bg-white py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
           <div className="text-center mb-12">
             <p className="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Our Specialists</p>

@@ -27,7 +27,7 @@ const Terms = () => {
         </div>
       </section>
 
-      <section className="bg-white py-16 sm:py-20 lg:py-24">
+      <section className="bg-white py-10">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-12">
           <div className="space-y-8">
             {sections.map((section, i) => (

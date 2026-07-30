@@ -131,7 +131,7 @@ const Home = () => {
       </section>
 
       {/* PARTNERS MARQUEE */}
-      <section className="bg-blue-50 py-20 border-b border-gray-100">
+      <section className="bg-blue-50 py-10 border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
           <div className="text-start mb-12">
             <p className="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">UAE Government Bodies</p>
@@ -151,7 +151,7 @@ const Home = () => {
       </section>
 
       {/* SERVICES SECTION */}
-      <section className="bg-white py-16 sm:py-20 lg:py-24">
+      <section className="bg-white py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
           <div className="text-start mb-12">
             <p className="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">What We Do</p>
@@ -175,7 +175,7 @@ const Home = () => {
       </section>
 
       {/* STEPS SECTION */}
-      <section className="bg-gray-light py-16 sm:py-20 lg:py-24">
+      <section className="bg-gray-light py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
           <div className="text-start mb-12">
             <p className="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">How It Works</p>
@@ -199,7 +199,7 @@ const Home = () => {
       </section>
 
       {/* STATS BAR */}
-      <section className="bg-primary py-12 sm:py-16">
+      <section className="bg-primary py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 text-center divide-x divide-white/20">
             {stats.map((stat, i) => (
@@ -214,7 +214,7 @@ const Home = () => {
 
 
       {/* CLIENTS MARQUEE */}
-      <section className="bg-gray-light py-16 sm:py-20">
+      <section className="bg-gray-light py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
           <div className="text-start max-w-xl mb-12">
             <p className="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">TRUSTED BY</p>
@@ -234,7 +234,7 @@ const Home = () => {
       </section>
 
       {/* PACKAGES SECTION */}
-      <section className="bg-white py-16 sm:py-20 lg:py-24">
+      <section className="bg-white py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
           <div className="text-center mb-12">
             <p className="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Special Offers</p>
@@ -249,7 +249,7 @@ const Home = () => {
       </section>
 
       {/* CEO SECTION */}
-      <section className="bg-gray-light py-16 sm:py-20 lg:py-24">
+      <section className="bg-gray-light py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
@@ -303,7 +303,7 @@ const Home = () => {
 
 
       {/* TESTIMONIALS SECTION */}
-      <section className="bg-white py-16 sm:py-20 lg:py-24">
+      <section className="bg-white py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
           <div className="text-center mb-12">
             <p className="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Testimonials</p>
@@ -331,7 +331,7 @@ const Home = () => {
       </section>
 
       {/* FAQ SECTION */}
-      <section id="faq" className="bg-gray-light py-16 sm:py-20 lg:py-24">
+      <section id="faq" className="bg-gray-light py-10">
         <div className="container">
           <div className="grid  md:grid-cols-2">
 
@@ -357,7 +357,7 @@ const Home = () => {
       </section>
 
       {/* BLOGS SECTION */}
-      <section className="bg-white py-16 sm:py-20 lg:py-24">
+      <section className="bg-white py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
           <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between mb-12 gap-4">
             <div>
@@ -386,7 +386,7 @@ const Home = () => {
       </section>
 
       {/* CTA SECTION */}
-      <section className="bg-primary py-16 sm:py-20">
+      <section className="bg-primary py-10">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 text-center">
           <h2 className="text-[28px] sm:text-[32px] lg:text-[40px] font-[800] text-white leading-tight mb-4 font-cabinet">Ready to Start Your Business in Dubai?</h2>
           <p className="text-base text-white/80 mb-8 max-w-2xl mx-auto">Get a free consultation with our expert team today and take the first step towards your UAE business journey.</p>

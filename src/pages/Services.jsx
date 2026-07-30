@@ -32,7 +32,7 @@ const Services = () => {
       </section>
 
       {/* SERVICES GRID */}
-      <section className="bg-white py-16 sm:py-20 lg:py-24">
+      <section className="bg-white py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {servicesList.map((svc, i) => {
@@ -60,7 +60,7 @@ const Services = () => {
       </section>
 
       {/* CTA SECTION */}
-      <section className="bg-primary py-16 sm:py-20">
+      <section className="bg-primary py-10">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 text-center">
           <h2 className="text-[28px] sm:text-[32px] lg:text-[40px] font-[800] text-white leading-tight mb-4 font-cabinet">Ready to Get Started?</h2>
           <p className="text-base text-white/80 mb-8 max-w-2xl mx-auto">Contact our expert team today for a free consultation and take the first step towards your UAE business journey.</p>

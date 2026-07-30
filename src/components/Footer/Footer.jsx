@@ -87,7 +87,7 @@ const Footer = () => {
                 <Mail className="w-4 h-4" />
                 {contactInfo.email}
               </a>
-              <div className="flex items-center gap-4 pt-2">
+              {/* <div className="flex items-center gap-4 pt-2">
                 {socialLinks.map((social) => {
                   const Icon = socialIcons[social.icon] || FaInstagram;
                   return (
@@ -103,17 +103,17 @@ const Footer = () => {
                     </a>
                   );
                 })}
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
 
         {/* Big Logo */}
-        <div className="py-10 flex justify-center sm:justify-start">
+        {/* <div className="py-10 flex justify-center sm:justify-start">
           <div className="flex items-center gap-2 mb-4">
             <img src={logo} alt="" className="max-w-[300px]" />
           </div>
-        </div>
+        </div> */}
 
         {/* Copyright */}
         <div className="border-t border-gray-200 pt-6">

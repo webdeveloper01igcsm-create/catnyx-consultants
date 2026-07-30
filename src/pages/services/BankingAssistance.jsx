@@ -31,7 +31,7 @@ const BankingAssistance = () => {
         </div>
       </section>
 
-      <section className="py-16 sm:py-20 lg:py-28 bg-white">
+      <section className="py-10 bg-white">
         <div className="max-w-[1280px] mx-auto px-6 lg:px-[48px]">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="overflow-hidden rounded-sm shadow-md">
@@ -51,7 +51,7 @@ const BankingAssistance = () => {
         </div>
       </section>
 
-      <section className="py-16 sm:py-20 lg:py-28 bg-[#F8FAFC]">
+      <section className="py-10 bg-[#F8FAFC]">
         <div className="max-w-[1280px] mx-auto px-6 lg:px-[48px]">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="text-center mb-14">
             <p className="text-[13px] font-bold text-[#94A3B8] uppercase tracking-[0.2em] mb-3">Why Banking Assistance Matters</p>
@@ -72,7 +72,7 @@ const BankingAssistance = () => {
         </div>
       </section>
 
-      <section className="py-16 sm:py-20 lg:py-28 bg-white">
+      <section className="py-10 bg-white">
         <div className="max-w-[1280px] mx-auto px-6 lg:px-[48px]">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="max-w-3xl">
             <p className="text-[13px] font-bold text-[#94A3B8] uppercase tracking-[0.2em] mb-3">Our Banking Assistance Process</p>
@@ -91,7 +91,7 @@ const BankingAssistance = () => {
         </div>
       </section>
 
-      <section className="py-16 sm:py-20 lg:py-28 bg-[#F8FAFC]">
+      <section className="py-10 bg-[#F8FAFC]">
         <div className="max-w-[1280px] mx-auto px-6 lg:px-[48px]">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
@@ -111,7 +111,7 @@ const BankingAssistance = () => {
         </div>
       </section>
 
-      <section className="relative py-20 lg:py-24 bg-[#0C69D0] overflow-hidden">
+      <section className="relative py-10 bg-[#0C69D0] overflow-hidden">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-[#0C69D0]/85 mix-blend-multiply z-10"></div>
           <img src={{m4}} alt="Business" className="w-full h-full object-cover object-center opacity-70" />
@@ -134,7 +134,7 @@ const BankingAssistance = () => {
         </div>
       </div>
 
-      <section className="py-16 sm:py-20 lg:py-28 bg-white">
+      <section className="py-10 bg-white">
         <div className="max-w-[1280px] mx-auto px-6 lg:px-[48px]">
           <h2 className="text-[28px] sm:text-[40px] font-[900] text-[#020617] leading-tight tracking-tight mb-12 text-center" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>Frequently Asked Questions</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
@@ -158,7 +158,7 @@ const BankingAssistance = () => {
         </div>
       </section>
 
-      <section className="py-16 bg-[#0C69D0]">
+      <section className="py-10 bg-[#0C69D0]">
         <div className="max-w-[1280px] mx-auto px-6 lg:px-[48px] text-center">
           <h2 className="text-[28px] sm:text-[40px] font-[900] text-white mb-4" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>Ready to Open Your Corporate Account?</h2>
           <p className="text-white/80 text-[16px] mb-8 max-w-xl mx-auto">Our experts are available to guide you through every step. Get a free, no-obligation consultation today.</p>

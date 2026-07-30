@@ -129,8 +129,8 @@ const BlogDetail = () => {
       </section>
 
       {/* ARTICLE CONTENT SECTION */}
-      <section className="bg-white py-10 sm:py-14">
-        <div className="container   mx-auto px-4 sm:px-6 lg:px-8 text-left">
+      <section className="bg-white py-10">
+        <div className="container max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-left">
           {/* Executive Summary Box */}
           <div className="bg-blue-50/60 border border-blue-100 rounded-xl p-5 mb-8">
             <h3 className="text-base font-bold text-gray-900 mb-2 flex items-center gap-2 font-cabinet">
@@ -184,8 +184,8 @@ const BlogDetail = () => {
       </section>
 
       {/* RELATED POSTS SECTION */}
-      <section className="bg-slate-50 py-14 border-t border-gray-200">
-        <div className="container   mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="bg-slate-50 py-10 border-t border-gray-200">
+        <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between mb-8">
             <div>
               <h2 className="text-xl sm:text-2xl font-bold text-gray-900 font-cabinet">
@@ -239,8 +239,8 @@ const BlogDetail = () => {
       </section>
 
       {/* CTA SECTION */}
-      <section className="bg-primary py-14 text-white text-center">
-        <div className="container   mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="bg-primary py-10 text-white text-center">
+        <div className="container max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-2xl font-bold mb-3 font-cabinet">
             Need Expert UAE Business Setup Guidance?
           </h2>

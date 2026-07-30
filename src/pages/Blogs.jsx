@@ -26,7 +26,7 @@ const Blogs = () => {
       </Helmet>
 
       {/* SIMPLIFIED HERO BANNER SECTION */}
-      <section className="mt-16 lg:mt-20 bg-gradient-to-b from-blue-50/70 via-white to-white py-16 lg:py-20 border-b border-gray-100">
+      <section className="mt-16 lg:mt-20 bg-gradient-to-b from-blue-50/70 via-white to-white py-10 border-b border-gray-100">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12 text-center">
           <p className="text-xs font-bold text-primary uppercase tracking-[0.25em] mb-3">
             DESERT CONSULTANTS INSIGHTS
@@ -84,7 +84,7 @@ const Blogs = () => {
       </section>
 
       {/* 6 BLOG CARDS GRID */}
-      <section className="bg-white py-14 sm:py-18">
+      <section className="bg-white py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
           <div className="flex items-center justify-between gap-4 mb-8">
             <h2 className="text-xl sm:text-2xl font-bold text-gray-900 font-cabinet">
@@ -167,7 +167,7 @@ const Blogs = () => {
       </section>
 
       {/* CTA SECTION */}
-      <section className="bg-primary py-14 text-white text-center">
+      <section className="bg-primary py-10 text-white text-center">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-12">
           <h2 className="text-2xl sm:text-3xl font-extrabold mb-3 font-cabinet">
             Have Questions About Business Setup in Dubai?

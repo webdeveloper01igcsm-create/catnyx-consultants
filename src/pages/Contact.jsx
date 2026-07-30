@@ -40,7 +40,7 @@ const Contact = () => {
         </div>
       </section>
 
-      <section className="bg-white py-16">
+      <section className="bg-white py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="bg-gray-light rounded-2xl p-8 text-center hover:shadow-md transition-shadow">
@@ -62,7 +62,7 @@ const Contact = () => {
         </div>
       </section>
 
-      <section className="bg-gray-light py-16 sm:py-20 lg:py-24">
+      <section className="bg-gray-light py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
             <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-sm">
