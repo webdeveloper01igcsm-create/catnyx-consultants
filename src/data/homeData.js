@@ -295,7 +295,7 @@ export const ceoData = {
   title: "Hear From Our CEO & Founder",
   description:
     "At Desert Consultants, our leadership is committed to making entrepreneurship simple and accessible for businesses across the UAE. As one of the trusted business setup consultants in Dubai, we have helped entrepreneurs and investors navigate every stage of their business journey with confidence. Our expertise in company formation in UAE, trade licensing, and business advisory ensures clients receive reliable, transparent, and tailored solutions to achieve long-term success.",
-  name: "Mr. Umair Riaz",
+  name: "Saurabh Singhal",
   role: "CEO & Founder, Desert Consultants",
   image: sirimg,
 };
@@ -346,7 +346,7 @@ export const testimonials = [
     rating: 4,
     avatar: review6,
     review:
-      "Looking to start a company? Desert Consultants is the best company setup consultant out there. They guided me through the entire business setup process and made everything easy. Big thanks to Mr. Umair!",
+      "Looking to start a company? Desert Consultants is the best company setup consultant out there. They guided me through the entire business setup process and made everything easy. Big thanks to Mr. Saurabh Singhal!",
   },
   {
     name: "My Stayinn Luxury",
@@ -480,7 +480,7 @@ export const blogs = [
     category: "Residency & Visas",
     readTime: "8 min read",
     date: "Jun 23, 2026",
-    author: "Umair Riaz",
+    author: "Saurabh Singhal",
     authorRole: "CEO, Desert Consultants",
     excerpt: "Dubai is a global magnet for investors and entrepreneurs. Learn about Employment, Investor, Golden, and Real Estate Visas with Desert Consultants.",
     content: `
@@ -520,7 +520,7 @@ export const blogs = [
     category: "Market Insights",
     readTime: "4 min read",
     date: "Jun 23, 2026",
-    author: "Umair Riaz",
+    author: "Saurabh Singhal",
     authorRole: "CEO, Desert Consultants",
     excerpt: "Ranked among the safest places globally, the UAE offers security, political stability, and 0% personal tax for international entrepreneurs.",
     content: `
@@ -603,8 +603,8 @@ export const blogs = [
 
 export const teamMembers = [
   {
-    name: "Umair Riaz", role: "Business Consultant & General Manager",
-    img: member1
+    name: "Saurabh Singhal", role: "CEO & Founder",
+    img: sirimg
   },
   {
     name: "Faizan Khan", role: "Senior Management & Consultation",
