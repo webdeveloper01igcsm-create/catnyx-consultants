@@ -40,8 +40,8 @@ const Home = () => {
   return (
     <>
       <Helmet>
-        <title>Business Setup Consultants in Dubai - Catnyx Consultants</title>
-        <meta name="description" content="Top business setup consultants in Dubai. Get expert guidance for starting your business in Dubai's dynamic market." />
+        <title>Business Setup Consultants in Dubai - Desert Consultants</title>
+        <meta name="description" content="Top business setup consultants in Dubai. Get expert guidance for starting your business in Dubai's dynamic market with Desert Consultants." />
       </Helmet>
 
       {/* HERO SECTION */}
@@ -288,7 +288,7 @@ const Home = () => {
           </div>
           <div className="relative max-w-4xl mx-auto rounded-2xl overflow-hidden shadow-2xl">
             {videoPlaying ? (
-              <iframe src={videoData.embedUrl} title="Catnyx Video" className="w-full aspect-video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+              <iframe src={videoData.embedUrl} title="Desert Consultants Video" className="w-full aspect-video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
             ) : (
               <button onClick={() => setVideoPlaying(true)} className="relative w-full aspect-video block group">
                 <img src={videoData.thumbnail} alt="Video Thumbnail" className="w-full h-full object-cover" onError={(e) => { e.target.src = "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1200&q=80"; }} />

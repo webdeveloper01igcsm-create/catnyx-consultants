@@ -8,8 +8,8 @@ const Offers = () => {
   return (
     <>
       <Helmet>
-        <title>Ongoing Promotions | Catnyx Consultants - Special Offers</title>
-        <meta name="description" content="Check out our ongoing promotions and special packages for UAE business setup in IFZA, Ajman, Sharjah, and RAKEZ free zones." />
+        <title>Ongoing Promotions | Desert Consultants - Special Offers</title>
+        <meta name="description" content="Check out our ongoing promotions and special packages for UAE business setup in IFZA, Ajman, Sharjah, and RAKEZ free zones from Desert Consultants." />
       </Helmet>
 
       {/* HERO SECTION */}

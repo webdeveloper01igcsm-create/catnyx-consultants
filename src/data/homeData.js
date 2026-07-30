@@ -32,6 +32,16 @@ import review5 from "../assets/r5.png"
 import review6 from "../assets/r6.png"
 import review7 from "../assets/r7.jpg"
 
+import member1 from "../assets/member1.png"
+import member2 from "../assets/member2.png"
+import member3 from "../assets/member3.png"
+import member4 from "../assets/member4.jpg"
+import member5 from "../assets/member5.png"
+import member6 from "../assets/member6.png"
+import member7 from "../assets/member7.png"
+import member8 from "../assets/member8.jpg"
+import member9 from "../assets/member9.png"
+import member10 from "../assets/member10.png"
 
 
 
@@ -56,7 +66,7 @@ export const heroData = {
       brandColor: "#00B67A",
       rating: "5.0",
       label: "Reviews",
-      link: "https://www.trustpilot.com/review/catnyxconsultants.com",
+      link: "https://www.trustpilot.com/review/desertconsultants.com",
     },
   ],
 };
@@ -102,7 +112,7 @@ export const steps = [
     number: "02",
     title: "Select the Perfect Business Location",
     description:
-      "Choose the ideal jurisdiction, be it UAE mainland, free zones, or offshore setup. Catnyx Consultants offers bespoke, cost-effective solutions for your company formation in Dubai, ensuring you're positioned for success.",
+      "Choose the ideal jurisdiction, be it UAE mainland, free zones, or offshore setup. Desert Consultants offers bespoke, cost-effective solutions for your company formation in Dubai, ensuring you're positioned for success.",
   },
   {
     number: "03",
@@ -114,13 +124,13 @@ export const steps = [
     number: "04",
     title: "Visa and Emirates ID Processing",
     description:
-      "Securing residency visas for entrepreneurs, dependents, partners, and employees is vital. Catnyx Consultants streamlines the visa application process and assists with medical appointments and Emirates ID acquisition, ensuring smooth immigration procedures.",
+      "Securing residency visas for entrepreneurs, dependents, partners, and employees is vital. Desert Consultants streamlines the visa application process and assists with medical appointments and Emirates ID acquisition, ensuring smooth immigration procedures.",
   },
   {
     number: "05",
     title: "Business Banking Support",
     description:
-      "Complete your setup by establishing a corporate bank account for your business. With Catnyx Consultants' assistance, you'll navigate the banking process seamlessly, ensuring you're equipped to conduct transactions and drive business growth in the UAE.",
+      "Complete your setup by establishing a corporate bank account for your business. With Desert Consultants' assistance, you'll navigate the banking process seamlessly, ensuring you're equipped to conduct transactions and drive business growth in the UAE.",
   },
 ];
 
@@ -276,9 +286,9 @@ export const ceoData = {
   badge: "LEADERSHIP",
   title: "Hear From Our CEO & Founder",
   description:
-    "At Catnyx Consultants, Mr. Umair Riaz is committed to making entrepreneurship simple and accessible for businesses across the UAE. As one of the trusted business setup consultants in Dubai, he has helped entrepreneurs and investors navigate every stage of their business journey with confidence. His expertise in company formation in UAE, trade licensing, and business advisory ensures clients receive reliable, transparent, and tailored solutions to achieve long-term success.",
+    "At Desert Consultants, our leadership is committed to making entrepreneurship simple and accessible for businesses across the UAE. As one of the trusted business setup consultants in Dubai, we have helped entrepreneurs and investors navigate every stage of their business journey with confidence. Our expertise in company formation in UAE, trade licensing, and business advisory ensures clients receive reliable, transparent, and tailored solutions to achieve long-term success.",
   name: "Mr. Umair Riaz",
-  role: "CEO & Founder, Catnyx Consultants",
+  role: "CEO & Founder, Desert Consultants",
   image: "https://www.catnyxconsultants.com/images/umair-riaz.png",
 };
 
@@ -289,7 +299,7 @@ export const testimonials = [
     rating: 5,
     avatar: review1,
     review:
-      "Catnyx Consultants stands out for their commitment and attention to detail. They take the time to understand your needs and deliver quality results. The entire process was smooth and well-managed.",
+      "Desert Consultants stands out for their commitment and attention to detail. They take the time to understand your needs and deliver quality results. The entire process was smooth and well-managed.",
   },
   {
     name: "Shraddha Kapoor",
@@ -297,7 +307,7 @@ export const testimonials = [
     rating: 5,
     avatar: review2,
     review:
-      "Catnyx looks like a legitimate operating business with visible Dubai presence, but from currently accessible public data, it's harder to confirm reputation independently than for more established firms. It may be worth considering, but only after checking license validity, transparent pricing, and off-site reviews. For UAE business setup, consultant transparency often matters more than marketing.",
+      "Desert Consultants looks like a legitimate operating business with visible Dubai presence, but from currently accessible public data, it's harder to confirm reputation independently than for more established firms. It may be worth considering, but only after checking license validity, transparent pricing, and off-site reviews. For UAE business setup, consultant transparency often matters more than marketing.",
   },
   {
     name: "Tahira Shahzad",
@@ -312,7 +322,7 @@ export const testimonials = [
     rating: 5,
     avatar: review4,
     review:
-      "I had an excellent experience with Catnyx when I got my business license. The service was fast, efficient, and their team was incredibly helpful throughout the process. They made everything smooth and easy to understand, and I really appreciate their professional approach. Highly recommend them for anyone looking to get their business license with great support!",
+      "I had an excellent experience with Desert Consultants when I got my business license. The service was fast, efficient, and their team was incredibly helpful throughout the process. They made everything smooth and easy to understand, and I really appreciate their professional approach. Highly recommend them for anyone looking to get their business license with great support!",
   },
   {
     name: "Shahbaz Alam",
@@ -320,7 +330,7 @@ export const testimonials = [
     rating: 5,
     avatar: review5,
     review:
-      "For anyone looking for professional business setup services, Catnyx Consultants is the right choice. Their team guided me perfectly. The best company setup consultant in the region.",
+      "For anyone looking for professional business setup services, Desert Consultants is the right choice. Their team guided me perfectly. The best company setup consultant in the region.",
   },
   {
     name: "Mahedi Hasan Datari",
@@ -328,7 +338,7 @@ export const testimonials = [
     rating: 4,
     avatar: review6,
     review:
-      "Looking to start a company? Catnyx Consultants is the best company setup consultant out there. They guided me through the entire business setup process and made everything easy. Big thanks to Mr. Umair!",
+      "Looking to start a company? Desert Consultants is the best company setup consultant out there. They guided me through the entire business setup process and made everything easy. Big thanks to Mr. Umair!",
   },
   {
     name: "My Stayinn Luxury",
@@ -336,7 +346,7 @@ export const testimonials = [
     rating: 5,
     avatar: review7,
     review:
-      "Catnyx Consultants provided outstanding assistance with opening a corporate bank account for My Stayinn Luxury in the UAE. Their team was knowledgeable, professional, and guided us through the process seamlessly. Highly recommended for anyone seeking corporate banking solutions in the UAE.",
+      "Desert Consultants provided outstanding assistance with opening a corporate bank account for My Stayinn Luxury in the UAE. Their team was knowledgeable, professional, and guided us through the process seamlessly. Highly recommended for anyone seeking corporate banking solutions in the UAE.",
   },
 ];
 
@@ -369,7 +379,7 @@ export const faqs = [
 ];
 
 export const videoData = {
-  badge: "Introducing Catnyx",
+  badge: "Introducing Desert Consultants",
   title: "Watch Our Setup Process",
   titleHighlight: "Setup Process",
   description: "Get a quick visual guide on how we help you set up and grow your business in the UAE seamlessly.",
@@ -383,7 +393,7 @@ export const blogs = [
     slug: "the-right-consultation-after-6-months-of-research-on-ifza-business-setup-in-the-uae",
     image: "https://www.catnyxconsultants.com/storage/blogs/wuZEFLmClb4Mydaus22Ii8Rdgrb6ojeMcuJwble0.jpg",
     date: "Jun 23, 2026",
-    author: "Catnyx Admin",
+    author: "Desert Admin",
     excerpt: "Read this post to learn more about our latest business insights and updates.",
   },
   {
@@ -391,7 +401,7 @@ export const blogs = [
     slug: "business-setup-with-meydan-freezone-dubai-syncro-llc",
     image: "https://www.catnyxconsultants.com/storage/blogs/Jjm5vgraOhSAeyVetTiO9gxKsGJly5ISi1Jq2Ett.jpg",
     date: "Jun 23, 2026",
-    author: "Catnyx Admin",
+    author: "Desert Admin",
     excerpt: "Read this post to learn more about our latest business insights and updates.",
   },
   {
@@ -399,7 +409,7 @@ export const blogs = [
     slug: "how-to-move-to-dubai-and-get-residency-in-2025-complete-guide",
     image: "https://www.catnyxconsultants.com/storage/blogs/9ceaEmSMwvqZVMLFlmSmgYwM6mKdOT0Y13pyj7b1.jpg",
     date: "Jun 23, 2026",
-    author: "Catnyx Admin",
+    author: "Desert Admin",
     excerpt: "Read this post to learn more about our latest business insights and updates.",
   },
   {
@@ -407,7 +417,7 @@ export const blogs = [
     slug: "why-uae-is-the-worlds-safest-place-to-live-and-do-business",
     image: "https://www.catnyxconsultants.com/storage/blogs/GgRKvYSzzkDTvdoG5Hi6Fdq3RekBy0UNml1rLinh.jpg",
     date: "Jun 23, 2026",
-    author: "Catnyx Admin",
+    author: "Desert Admin",
     excerpt: "Read this post to learn more about our latest business insights and updates.",
   },
   {
@@ -415,7 +425,7 @@ export const blogs = [
     slug: "why-smart-investors-are-entering-the-market-now",
     image: "https://www.catnyxconsultants.com/storage/blogs/8SYRyCqKaMYpjcNUf8HsDrw4wwgREJNP1cmKbpCT.jpg",
     date: "Jun 22, 2026",
-    author: "Catnyx Admin",
+    author: "Desert Admin",
     excerpt: "Read this post to learn more about our latest business insights and updates.",
   },
   {
@@ -423,20 +433,50 @@ export const blogs = [
     slug: "dubai-limousine-business-the-reality-no-one-tells-you",
     image: "https://www.catnyxconsultants.com/storage/blogs/kJV3RtNazJN3mq6UzdkstKucp1E0lZggKrWCqTuB.jpg",
     date: "Jun 22, 2026",
-    author: "Catnyx Admin",
+    author: "Desert Admin",
     excerpt: "Read this post to learn more about our latest business insights and updates.",
   },
 ];
 
 export const teamMembers = [
-  { name: "Umair Riaz", role: "Business Consultant & General Manager", img: "https://www.catnyxconsultants.com/storage/teams/cn4tg2bCI2PRXSXc59enqNBNFyqd2mTLEW6qWLsM.png" },
-  { name: "Faizan Khan", role: "Senior Management & Consultation", img: "https://www.catnyxconsultants.com/storage/teams/rRDJAWkt36hw2GwdHreYnpOpUbgTGy7yIIFSDRJq.png" },
-  { name: "Alina Aeman", role: "Head of Operations", img: "https://www.catnyxconsultants.com/storage/teams/6df4E8QRpAN27ltNevCRCTSaZJjRLesiUH81osER.png" },
-  { name: "Shubham Sharma", role: "Team Lead & Consulting (Noida)", img: "https://www.catnyxconsultants.com/storage/teams/NRErWPko5ADx2cByroOKzCfGZjrdgYnKnyOcxyHn.jpg" },
-  { name: "Muqeem Ramzani", role: "Business Development & PRO", img: "https://www.catnyxconsultants.com/storage/teams/3nIYI9OeeBbUjh9hblm7D8GVHQgJVmgqbDF3TgJP.png" },
-  { name: "Afsal Zain", role: "Senior Freezone Consultant", img: "https://www.catnyxconsultants.com/storage/teams/uWqP2KVG8TM3CeCgihB0kAULpHfIbY9oJHL3PKKR.png" },
-  { name: "Nabeel Alam", role: "Administrator", img: "https://www.catnyxconsultants.com/storage/teams/nh5RIlBx8i6ZN4NqvBHJCuitpSBvgvkHi9KSRK5b.png" },
-  { name: "Mohd Faisal", role: "Business Consultant & Marketing", img: "https://www.catnyxconsultants.com/storage/teams/uMaKHfj5qxn7BJsA7izN1cHXtoEI88NXyCtoVKrE.jpg" },
-  { name: "Nadiya Khan", role: "Senior Freezone & Mainland Consultant", img: "https://www.catnyxconsultants.com/storage/teams/wr2UV2QWSnMLcao6yQwmoEWBjsSVBKWmj9kW6j6O.png" },
-  { name: "Ali Maaz Farooqui", role: "Sales Executive", img: "https://www.catnyxconsultants.com/storage/teams/YXb4v7aj9eS5JbVuYtRXPo5M7wuKZrOKffvH5uZX.png" },
+  {
+    name: "Umair Riaz", role: "Business Consultant & General Manager",
+    img: member1
+  },
+  {
+    name: "Faizan Khan", role: "Senior Management & Consultation",
+    img: member2
+  },
+  {
+    name: "Alina Aeman", role: "Head of Operations",
+    img: member3
+  },
+  {
+    name: "Shubham Sharma", role: "Team Lead & Consulting (Noida)",
+    img: member4
+  },
+  {
+    name: "Muqeem Ramzani", role: "Business Development & PRO",
+    img: member5
+  },
+  {
+    name: "Afsal Zain", role: "Senior Freezone Consultant",
+    img: member6
+  },
+  {
+    name: "Nabeel Alam", role: "Administrator",
+    img: member7
+  },
+  {
+    name: "Mohd Faisal", role: "Business Consultant & Marketing",
+    img: member8
+  },
+  {
+    name: "Nadiya Khan", role: "Senior Freezone & Mainland Consultant",
+    img: member9
+  },
+  {
+    name: "Ali Maaz Farooqui", role: "Sales Executive",
+    img: member10
+  },
 ];

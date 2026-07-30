@@ -11,6 +11,7 @@ const socialIcons = {
   twitter: FaXTwitter,
   youtube: FaYoutube,
 };
+import logo from "../../assets/logo.png"
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -24,13 +25,7 @@ const Footer = () => {
           {/* Logo & Addresses */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 bg-[#0C69D0] rounded-lg flex items-center justify-center">
-                <span className="text-white font-extrabold text-xl font-cabinet">C</span>
-              </div>
-              <div className="flex flex-col leading-none">
-                <span className="text-lg font-extrabold text-[#0F1B2D] font-cabinet">Catnyx</span>
-                <span className="text-[10px] font-medium text-gray-500 tracking-wider uppercase">Consultants</span>
-              </div>
+              <img src={logo} alt="" className="max-w-[200px]" />
             </div>
             <div className="mt-4 space-y-4">
               <div>
@@ -119,21 +114,15 @@ const Footer = () => {
 
         {/* Big Logo */}
         <div className="py-10 flex justify-center sm:justify-start">
-          <div className="flex items-center gap-3">
-            <div className="w-20 h-20 sm:w-28 sm:h-28 lg:w-32 lg:h-32 bg-[#0C69D0] rounded-2xl flex items-center justify-center">
-              <span className="text-white font-extrabold text-4xl sm:text-5xl lg:text-6xl font-cabinet">C</span>
-            </div>
-            <div className="flex flex-col">
-              <span className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#0F1B2D] font-cabinet">Catnyx</span>
-              <span className="text-sm sm:text-base font-medium text-gray-500 tracking-wider uppercase">Consultants</span>
-            </div>
+          <div className="flex items-center gap-2 mb-4">
+            <img src={logo} alt="" className="max-w-[300px]" />
           </div>
         </div>
 
         {/* Copyright */}
         <div className="border-t border-gray-200 pt-6">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p className="text-xs text-gray-body">&copy; 2026 Catnyx Consultants. All rights reserved.</p>
+            <p className="text-xs text-gray-body">&copy; 2026 Desert Consultants. All rights reserved.</p>
             <button
               onClick={scrollToTop}
               className="w-8 h-8 flex items-center justify-center rounded-full border border-gray-300 text-gray-400 hover:text-primary hover:border-primary transition-colors"

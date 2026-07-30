@@ -8,8 +8,8 @@ const Blogs = () => {
   return (
     <>
       <Helmet>
-        <title>Blog | Catnyx Consultants - UAE Business Insights</title>
-        <meta name="description" content="Read the latest insights, news, and guides about UAE business setup, Dubai free zones, and more from Catnyx Consultants." />
+        <title>Blog | Desert Consultants - UAE Business Insights</title>
+        <meta name="description" content="Read the latest insights, news, and guides about UAE business setup, Dubai free zones, and more from Desert Consultants." />
       </Helmet>
 
       {/* HERO SECTION */}

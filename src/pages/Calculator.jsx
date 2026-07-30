@@ -31,8 +31,8 @@ const Calculator = () => {
   return (
     <>
       <Helmet>
-        <title>Cost Calculator | Catnyx Consultants - UAE Business Setup</title>
-        <meta name="description" content="Calculate the estimated cost of setting up your business in the UAE with our free cost calculator." />
+        <title>Cost Calculator | Desert Consultants - UAE Business Setup</title>
+        <meta name="description" content="Calculate the estimated cost of setting up your business in the UAE with our free cost calculator from Desert Consultants." />
       </Helmet>
 
       <section className="mt-16 lg:mt-20 relative overflow-hidden bg-gradient-to-br from-primary-light via-white to-primary-light py-16 lg:py-24">

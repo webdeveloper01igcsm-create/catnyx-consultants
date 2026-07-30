@@ -14,7 +14,7 @@ const aboutStats = [
 
 const reasons = [
   "Providing personalized solutions for the requirement.",
-  "Affordable - If you have a quotation more than Catnyx, We bet you to provide that quote and we will beat that quotation as well.",
+  "Affordable - If you have a quotation more than Desert Consultants, We bet you to provide that quote and we will beat that quotation as well.",
   "Saving you from taxes and compliances.",
   "Helping our clients with UAE experience for the digital growth of the business.",
 ];
@@ -23,8 +23,8 @@ const About = () => {
   return (
     <>
       <Helmet>
-        <title>About Us | Catnyx Consultants - UAE Business Setup Experts</title>
-        <meta name="description" content="Learn about Catnyx Consultants - your trusted partner for UAE business setup." />
+        <title>About Us | Desert Consultants - UAE Business Setup Experts</title>
+        <meta name="description" content="Learn about Desert Consultants - your trusted partner for UAE business setup." />
       </Helmet>
 
       {/* HERO SECTION */}
@@ -35,7 +35,7 @@ const About = () => {
         </div>
         <div className="relative z-20 max-w-[1280px] mx-auto w-full py-[80px] lg:py-[128px] px-6 lg:px-[48px]">
           <div className="max-w-3xl">
-            <p className="text-[13px] font-bold text-primary uppercase tracking-[0.2em] mb-4">ABOUT CATNYX</p>
+            <p className="text-[13px] font-bold text-primary uppercase tracking-[0.2em] mb-4">ABOUT DESERT CONSULTANTS</p>
             <h1 className="text-[36px] sm:text-[48px] lg:text-[60px] font-[800] text-[#020617] leading-[1.1] tracking-tight sm:tracking-[-3px] mb-6 font-cabinet">
               Connect | Collab | Create
             </h1>
@@ -55,7 +55,7 @@ const About = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
               <p className="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">Welcome</p>
-              <h2 className="text-[28px] sm:text-[32px] lg:text-[36px] font-[800] text-[#0C69D0] leading-[40px] tracking-[-0.9px] mb-6 font-cabinet">Welcome to Catnyx Consultants</h2>
+              <h2 className="text-[28px] sm:text-[32px] lg:text-[36px] font-[800] text-[#0C69D0] leading-[40px] tracking-[-0.9px] mb-6 font-cabinet">Welcome to Desert Consultants</h2>
               <p className="text-sm sm:text-base text-gray-body leading-relaxed mb-4">
                 We believe in connecting with the people who want premium & genuine help regarding business setup or investment management services in UAE, while making the connections we make sure of the requirements of our clients to provide the solutions according to needs, that help us to collaborate with our clients for the future business help to each other's growth. That creates an impact in the market.
               </p>
@@ -69,7 +69,7 @@ const About = () => {
                 <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32b7?w=600&q=80" alt="Business handshake" className="w-full object-cover aspect-[27/26]" />
               </div>
               <div className="flex flex-col gap-3 sm:gap-4 w-1/2 mt-6 sm:mt-10 lg:mt-12">
-                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&q=80" alt="Team discussion" className="w-full object-cover aspect-[27/26]" />
+                <img src="https://images.unsplash.com/photo-1560250097-0b93528c312a?w=600&q=80" alt="Team discussion" className="w-full object-cover aspect-[27/26]" />
                 <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=600&q=80" alt="Dubai Marina cityscape" className="w-full object-cover aspect-[27/26]" />
               </div>
             </div>
@@ -103,7 +103,7 @@ const About = () => {
               </p>
             </div>
             <div>
-              <h3 className="text-[22px] sm:text-[26px] lg:text-[28px] font-[800] text-[#0C69D0] leading-[32px] tracking-[-0.5px] mb-2 font-cabinet">Reasons To Choose Catnyx</h3>
+              <h3 className="text-[22px] sm:text-[26px] lg:text-[28px] font-[800] text-[#0C69D0] leading-[32px] tracking-[-0.5px] mb-2 font-cabinet">Reasons To Choose Desert Consultants</h3>
               <p className="text-xs text-gray-body mb-6">Because we understand the needs of today's business community</p>
               <ul className="space-y-4">
                 {reasons.map((reason, i) => (

@@ -28,8 +28,8 @@ const Contact = () => {
   return (
     <>
       <Helmet>
-        <title>Contact Us | Catnyx Consultants</title>
-        <meta name="description" content="Get in touch with Catnyx Consultants for expert business setup services in Dubai." />
+        <title>Contact Us | Desert Consultants</title>
+        <meta name="description" content="Get in touch with Desert Consultants for expert business setup services in Dubai." />
       </Helmet>
 
       <section className="mt-16 lg:mt-20 relative overflow-hidden bg-gradient-to-br from-primary-light via-white to-primary-light py-16 lg:py-24">
@@ -126,7 +126,7 @@ const Contact = () => {
                 </div>
               </div>
               <div className="rounded-2xl overflow-hidden shadow-sm h-64">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3607.683983!2d55.3317!3d25.2637!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDE1JzQ5LjMiTiA1NcKMTknUzU4LjEiRQ!5e0!3m2!1sen!2s!4v1234567890" width="100%" height="100%" style={{ border: 0 }} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade" title="Catnyx Office Location"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3607.683983!2d55.3317!3d25.2637!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDE1JzQ5LjMiTiA1NcKMT19UzU4LjEiRQ!5e0!3m2!1sen!2s!4v1234567890" width="100%" height="100%" style={{ border: 0 }} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade" title="Desert Consultants Office Location"></iframe>
               </div>
             </div>
           </div>

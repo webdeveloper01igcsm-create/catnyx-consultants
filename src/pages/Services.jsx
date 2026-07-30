@@ -18,8 +18,8 @@ const Services = () => {
   return (
     <>
       <Helmet>
-        <title>Our Services | Catnyx Consultants - UAE Business Setup</title>
-        <meta name="description" content="Explore our comprehensive business setup, accounting, PRO, and banking services in the UAE." />
+        <title>Our Services | Desert Consultants - UAE Business Setup</title>
+        <meta name="description" content="Explore our comprehensive business setup, accounting, PRO, and banking services in the UAE from Desert Consultants." />
       </Helmet>
 
       {/* HERO SECTION */}

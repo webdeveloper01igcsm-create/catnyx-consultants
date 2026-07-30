@@ -2,12 +2,12 @@ import { Helmet } from "react-helmet-async";
 
 const Terms = () => {
   const sections = [
-    { title: "Introduction", content: "Welcome to Catnyx Consultants. By using our website and services, you agree to these terms and conditions. Please read them carefully before engaging with our services." },
-    { title: "Services", content: "Catnyx Consultants provides business setup, accounting, PRO services, and related consulting services in the UAE. We reserve the right to modify or discontinue any service at any time." },
-    { title: "Client Responsibilities", content: "Clients are responsible for providing accurate and complete information required for business setup and related services. Any delays caused by incomplete or incorrect information are not the responsibility of Catnyx Consultants." },
+    { title: "Introduction", content: "Welcome to Desert Consultants. By using our website and services, you agree to these terms and conditions. Please read them carefully before engaging with our services." },
+    { title: "Services", content: "Desert Consultants provides business setup, accounting, PRO services, and related consulting services in the UAE. We reserve the right to modify or discontinue any service at any time." },
+    { title: "Client Responsibilities", content: "Clients are responsible for providing accurate and complete information required for business setup and related services. Any delays caused by incomplete or incorrect information are not the responsibility of Desert Consultants." },
     { title: "Payment Terms", content: "All fees must be paid as per the agreed quotation. Government fees and charges are subject to change without prior notice. We reserve the right to withhold services until full payment is received." },
     { title: "Confidentiality", content: "We maintain strict confidentiality of all client information and documents. We do not share client data with third parties without explicit consent, except as required by law." },
-    { title: "Limitation of Liability", content: "Catnyx Consultants shall not be liable for any indirect, incidental, or consequential damages arising from the use of our services. Our liability is limited to the fees paid for the specific service in question." },
+    { title: "Limitation of Liability", content: "Desert Consultants shall not be liable for any indirect, incidental, or consequential damages arising from the use of our services. Our liability is limited to the fees paid for the specific service in question." },
     { title: "Governing Law", content: "These terms and conditions are governed by the laws of the United Arab Emirates. Any disputes shall be resolved in the courts of the UAE." },
     { title: "Changes to Terms", content: "We reserve the right to update these terms and conditions at any time. Continued use of our services after changes constitutes acceptance of the new terms." },
   ];
@@ -15,8 +15,8 @@ const Terms = () => {
   return (
     <>
       <Helmet>
-        <title>Terms & Conditions | Catnyx Consultants</title>
-        <meta name="description" content="Read the terms and conditions for using Catnyx Consultants services." />
+        <title>Terms & Conditions | Desert Consultants</title>
+        <meta name="description" content="Read the terms and conditions for using Desert Consultants services." />
       </Helmet>
 
       <section className="mt-16 lg:mt-20 relative overflow-hidden bg-gradient-to-br from-primary-light via-white to-primary-light py-16 lg:py-24">

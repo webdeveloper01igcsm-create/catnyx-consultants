@@ -44,15 +44,15 @@ export const contactInfo = {
   phone: "+971554381413",
   phoneHref: "tel:+971505382297",
   whatsapp: "https://wa.me/971505382297",
-  email: "Info@Desert consultants.com",
+  email: "Info@Desertconsultants.com",
   uaeOffice: "Makateb Building - Office 801, Floor 8 - 8th St - Port Saeed - Deira - Dubai",
-  indiaOffice: "Desert , 406 B Tower, 4th Floor, Ithum Tower, Noida Sector 62",
+  indiaOffice: "Desert Consultants, 406 B Tower, 4th Floor, Ithum Tower, Noida Sector 62",
 };
 
 export const socialLinks = [
-  { name: "Instagram", url: "https://www.instagram.com/Desert consultants/", icon: "instagram" },
-  { name: "LinkedIn", url: "https://www.linkedin.com/company/Desert -consultants/", icon: "linkedin" },
-  { name: "Facebook", url: "https://www.facebook.com/people/Desert -Consultants/61561679125997/", icon: "facebook" },
-  { name: "Twitter", url: "https://x.com/Desert Consults", icon: "twitter" },
-  { name: "YouTube", url: "https://www.youtube.com/@Desert consultants", icon: "youtube" },
+  { name: "Instagram", url: "https://www.instagram.com/desertconsultants/", icon: "instagram" },
+  { name: "LinkedIn", url: "https://www.linkedin.com/company/desert-consultants/", icon: "linkedin" },
+  { name: "Facebook", url: "https://www.facebook.com/people/Desert-Consultants/61561679125997/", icon: "facebook" },
+  { name: "Twitter", url: "https://x.com/DesertConsults", icon: "twitter" },
+  { name: "YouTube", url: "https://www.youtube.com/@Desertconsultants", icon: "youtube" },
 ];
