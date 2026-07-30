@@ -29,12 +29,8 @@ const Footer = () => {
             </div>
             <div className="mt-4 space-y-4">
               <div>
-                <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">UAE Head Office</p>
+                <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">UAE Office</p>
                 <p className="text-xs text-gray-body leading-relaxed">{contactInfo.uaeOffice}</p>
-              </div>
-              <div>
-                <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">India Office</p>
-                <p className="text-xs text-gray-body leading-relaxed">{contactInfo.indiaOffice}</p>
               </div>
             </div>
           </div>

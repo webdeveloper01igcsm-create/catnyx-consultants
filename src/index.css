@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: scroll 30s linear infinite;
+}
+
 @theme {
   --color-primary: #0C69D0;
   --color-primary-dark: #0A56AD;

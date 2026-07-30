@@ -19,7 +19,8 @@ import {
 } from "../data/homeData";
 import Slider from "../components/Common/Slider";
 import PricingCard from "../components/PriseCard";
-
+import b1 from "../assets/banner1.jfif"
+import b2 from "../assets/banner2.jfif"
 const serviceIcons = { building: Building2, money: DollarSign, globe: Globe };
 
 const Home = () => {
@@ -117,16 +118,12 @@ const Home = () => {
                     </div>
                   </>
                 </div>
-
-
-
-
               </div>
             </motion.div>
             <motion.div initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6, delay: 0.2 }} className="hidden lg:block">
               <div className="hero-collage">
-                <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800&q=80" alt="Dubai Business" className="img-main" />
-                <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=800&q=80" alt="Business Meeting" className="img-secondary" />
+                <img src={b1} alt="Dubai Business" className="img-main" />
+                <img src={b2} alt="Business Meeting" className="img-secondary" />
               </div>
             </motion.div>
           </div>

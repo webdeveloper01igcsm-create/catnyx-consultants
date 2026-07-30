@@ -4,7 +4,7 @@ import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { Helmet } from "react-helmet-async";
 import { teamMembers } from "../data/homeData";
 import Slider from "../components/Common/Slider";
-
+import aboutRight from "../assets/about-right.png";
 const aboutStats = [
   { value: "10+", label: "Team Members" },
   { value: "70+", label: "Happy Clients" },
@@ -31,7 +31,7 @@ const About = () => {
       <section className="mt-16 lg:mt-20 relative overflow-hidden flex items-center min-h-[400px] lg:min-h-[500px]">
         <div className="absolute inset-0 z-0 bg-white">
           <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1600&q=80" alt="Dubai Background" className="w-full h-full object-cover object-right z-0" />
-          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/90 md:via-white/80 to-transparent md:to-transparent/10 z-10 w-full md:w-[75%] lg:w-[65%]"></div>
+          <div className="absolute inset-0 bg-linear-to-r from-white via-white/90 md:via-white/80 to-transparent md:to-transparent/10 z-10 w-full md:w-[75%] lg:w-[65%]"></div>
         </div>
         <div className="relative z-20 max-w-[1280px] mx-auto w-full py-[80px] lg:py-[128px] px-6 lg:px-[48px]">
           <div className="max-w-3xl">
@@ -64,14 +64,7 @@ const About = () => {
               </p>
             </motion.div>
             <div className="flex gap-3 sm:gap-4 w-full max-w-[556px] mx-auto lg:ml-auto">
-              <div className="flex flex-col gap-3 sm:gap-4 w-1/2">
-                <img src="https://images.unsplash.com/photo-1546412414-e1885259563a?w=600&q=80" alt="Dubai skyline" className="w-full object-cover aspect-[27/26]" />
-                <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32b7?w=600&q=80" alt="Business handshake" className="w-full object-cover aspect-[27/26]" />
-              </div>
-              <div className="flex flex-col gap-3 sm:gap-4 w-1/2 mt-6 sm:mt-10 lg:mt-12">
-                <img src="https://images.unsplash.com/photo-1560250097-0b93528c312a?w=600&q=80" alt="Team discussion" className="w-full object-cover aspect-[27/26]" />
-                <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=600&q=80" alt="Dubai Marina cityscape" className="w-full object-cover aspect-[27/26]" />
-              </div>
+              <img src={aboutRight} alt="About Desert Consultants" className="w-full h-full object-cover " />
             </div>
           </div>
         </div>

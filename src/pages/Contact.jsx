@@ -110,23 +110,17 @@ const Contact = () => {
             </div>
 
             <div>
-              <h2 className="text-[24px] sm:text-[28px] font-[800] text-[#0C69D0] mb-6 font-cabinet">Our Offices</h2>
+              <h2 className="text-[24px] sm:text-[28px] font-[800] text-[#0C69D0] mb-6 font-cabinet">Our Office</h2>
               <div className="space-y-6 mb-8">
                 <div className="bg-white rounded-2xl p-6 shadow-sm">
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 bg-primary-light rounded-xl flex items-center justify-center flex-shrink-0"><MapPin className="w-6 h-6 text-primary" /></div>
-                    <div><h3 className="text-base font-bold text-dark mb-1 font-cabinet">UAE Head Office</h3><p className="text-sm text-gray-body leading-relaxed">{contactInfo.uaeOffice}</p></div>
-                  </div>
-                </div>
-                <div className="bg-white rounded-2xl p-6 shadow-sm">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-primary-light rounded-xl flex items-center justify-center flex-shrink-0"><MapPin className="w-6 h-6 text-primary" /></div>
-                    <div><h3 className="text-base font-bold text-dark mb-1 font-cabinet">India Office</h3><p className="text-sm text-gray-body leading-relaxed">{contactInfo.indiaOffice}</p></div>
+                    <div><h3 className="text-base font-bold text-dark mb-1 font-cabinet">UAE Office</h3><p className="text-sm text-gray-body leading-relaxed">{contactInfo.uaeOffice}</p></div>
                   </div>
                 </div>
               </div>
               <div className="rounded-2xl overflow-hidden shadow-sm h-64">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3607.683983!2d55.3317!3d25.2637!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDE1JzQ5LjMiTiA1NcKMT19UzU4LjEiRQ!5e0!3m2!1sen!2s!4v1234567890" width="100%" height="100%" style={{ border: 0 }} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade" title="Desert Consultants Office Location"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3610.123!2d55.365!3d25.195!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDExJzQyLjAiTiA1NcKwMjEnNTQuMCJF!5e0!3m2!1sen!2s!4v1234567890" width="100%" height="100%" style={{ border: 0 }} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade" title="Desert Consultants Office Location"></iframe>
               </div>
             </div>
           </div>

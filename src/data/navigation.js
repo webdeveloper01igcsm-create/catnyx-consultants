@@ -41,12 +41,11 @@ export const footerCompany = [
 ];
 
 export const contactInfo = {
-  phone: "+971554381413",
-  phoneHref: "tel:+971505382297",
+  phone: "0585952349",
+  phoneHref: "tel:0585952349",
   whatsapp: "https://wa.me/971505382297",
-  email: "Info@Desertconsultants.com",
-  uaeOffice: "Makateb Building - Office 801, Floor 8 - 8th St - Port Saeed - Deira - Dubai",
-  indiaOffice: "Desert Consultants, 406 B Tower, 4th Floor, Ithum Tower, Noida Sector 62",
+  email: "admin@desertconsultants.ae",
+  uaeOffice: "DSO-IFZA, IFZA Properties, Dubai Silicon Oasis, Dubai, UAE",
 };
 
 export const socialLinks = [

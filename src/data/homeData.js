@@ -43,6 +43,14 @@ import member8 from "../assets/member8.jpg"
 import member9 from "../assets/member9.png"
 import member10 from "../assets/member10.png"
 
+import b1_human from "../assets/b1_human.png"
+import b2_human from "../assets/b2_human.png"
+import b3_human from "../assets/b3_human.png"
+import b4_human from "../assets/b4_human.png"
+import b5_human from "../assets/b5_human.png"
+import b6_human from "../assets/b6_human.png"
+
+
 
 
 export const heroData = {
@@ -389,53 +397,208 @@ export const videoData = {
 
 export const blogs = [
   {
+    id: 1,
     title: "The Right Consultation After 6 Months of Research on IFZA Business Setup in the UAE",
     slug: "the-right-consultation-after-6-months-of-research-on-ifza-business-setup-in-the-uae",
-    image: "https://www.catnyxconsultants.com/storage/blogs/wuZEFLmClb4Mydaus22Ii8Rdgrb6ojeMcuJwble0.jpg",
+    image: b1_human,
+    category: "Free Zone Setup",
+    readTime: "5 min read",
     date: "Jun 23, 2026",
-    author: "Desert Admin",
-    excerpt: "Read this post to learn more about our latest business insights and updates.",
+    author: "Desert Consultants Team",
+    authorRole: "IFZA Setup Specialist",
+    excerpt: "If you ask us, what is the single most critical factor for IFZA business setup in the UAE? The answer is 'The Right Consultation'. Discover how we helped Core Power FZCO.",
+    content: `
+      <p class="text-lg font-semibold text-gray-900 mb-4">
+        If you ask us, what is the single most critical factor for IFZA business setup in the UAE? Our answer is <strong>"The Right Consultation"</strong>.
+      </p>
+      <p class="mb-4">
+        The same happened with our client, <strong>Core Power FZCO</strong>.
+      </p>
+      <p class="mb-4">
+        Before starting, he conducted market research for over 6 months, meeting with several business consultancy agencies across Dubai.
+      </p>
+      <p class="mb-4">
+        During his search, he discovered Desert Consultants and scheduled a detailed advisory session with our setup specialists. We walked him through all the operational gaps, fee structures, and free zone benefits.
+      </p>
+      <p class="mb-4">
+        Initially, he tried proceeding through a low-cost agency. However, weeks later he faced critical registration roadblocks when the agency failed to clear mandatory government fees, resulting in an immigration card rejection.
+      </p>
+      <blockquote class="border-l-4 border-primary pl-4 py-2 my-6 bg-blue-50/50 rounded-r text-gray-800 italic">
+        "At Desert Consultants, we recommend the Dubai IFZA license for flexibility, speed, and 100% foreign ownership."
+      </blockquote>
+      <p class="mb-4">
+        He chose to transition his setup process to <strong>Desert Consultants</strong>. Our team resolved the approval hurdles, processed his establishment card, and delivered a complete turnkey company setup with office space.
+      </p>
+      <p class="mb-4">
+        Today, Core Power FZCO operates seamlessly as a successful battery manufacturing and trading firm in the UAE.
+      </p>
+      <h3 class="text-xl font-bold text-gray-900 mt-6 mb-3">Key Lessons for Investors:</h3>
+      <ul class="list-disc pl-6 space-y-2 mb-6 text-gray-700">
+        <li>Beware of unverified agencies offering unrealistic discounts that lead to hidden government penalties.</li>
+        <li>Work with licensed UAE consultants who provide transparent, end-to-end guidance.</li>
+        <li>Verify corporate credentials and client reviews before transferring initial deposits.</li>
+      </ul>
+    `
   },
   {
-    title: "Business Setup With Meydan Freezone, Dubai SYNCRO L.L.C",
+    id: 2,
+    title: "Business Setup With Meydan Freezone, Dubai: Step-by-Step Guide",
     slug: "business-setup-with-meydan-freezone-dubai-syncro-llc",
-    image: "https://www.catnyxconsultants.com/storage/blogs/Jjm5vgraOhSAeyVetTiO9gxKsGJly5ISi1Jq2Ett.jpg",
+    image: b2_human,
+    category: "Company Formation",
+    readTime: "6 min read",
     date: "Jun 23, 2026",
-    author: "Desert Admin",
-    excerpt: "Read this post to learn more about our latest business insights and updates.",
+    author: "Desert Consultants Team",
+    authorRole: "Free Zone Specialist",
+    excerpt: "Many entrepreneurs wait for an external signal saying 'You're ready.' Learn how Desert Consultants helped SYNCRO LLC set up with Meydan Freezone, Dubai.",
+    content: `
+      <p class="text-lg font-semibold text-gray-900 mb-4">
+        Many entrepreneurs wait for an external signal saying, "You're ready now."
+      </p>
+      <p class="mb-4">
+        Setting up a business abroad requires careful planning, risk evaluation, and execution. At some point, almost every founder asks: <em>"Am I ready to expand into Dubai?"</em>
+      </p>
+      <p class="mb-4">
+        At Desert Consultants, our mission is to eliminate setup friction by offering clear, transparent consultation. As we demonstrated with <strong>SYNCRO LLC</strong> and our client <strong>Mr. Radhakrishan</strong>, we handled the entire Meydan Freezone incorporation seamlessly.
+      </p>
+      <blockquote class="border-l-4 border-primary pl-4 py-2 my-6 bg-blue-50/50 rounded-r text-gray-800 italic">
+        "When you focus on genuine value and long-term client success, business formation becomes straightforward and rewarding."
+      </blockquote>
+      <p class="mb-4">
+        Meydan Free Zone offers a central location near Downtown Dubai, 100% foreign ownership, over 1,500 business activities, and fast-track digital banking support.
+      </p>
+      <p class="font-bold text-primary">
+        Ready to take the next step? Contact Desert Consultants for a free consultation today.
+      </p>
+    `
   },
   {
-    title: "How to Move to Dubai and Get Residency in 2025: Complete Guide",
+    id: 3,
+    title: "How to Move to Dubai and Get Residency in 2026: Complete Guide",
     slug: "how-to-move-to-dubai-and-get-residency-in-2025-complete-guide",
-    image: "https://www.catnyxconsultants.com/storage/blogs/9ceaEmSMwvqZVMLFlmSmgYwM6mKdOT0Y13pyj7b1.jpg",
+    image: b3_human,
+    category: "Residency & Visas",
+    readTime: "8 min read",
     date: "Jun 23, 2026",
-    author: "Desert Admin",
-    excerpt: "Read this post to learn more about our latest business insights and updates.",
+    author: "Umair Riaz",
+    authorRole: "CEO, Desert Consultants",
+    excerpt: "Dubai is a global magnet for investors and entrepreneurs. Learn about Employment, Investor, Golden, and Real Estate Visas with Desert Consultants.",
+    content: `
+      <p class="text-lg font-medium text-gray-800 mb-6">
+        Dubai has evolved into one of the world's most dynamic financial hubs. With zero personal income tax, world-class infrastructure, and high living standards, relocating your business and family to the UAE is a strategic move.
+      </p>
+
+      <h3 class="text-xl font-bold text-gray-900 mt-6 mb-3 font-cabinet">Key Benefits of UAE Residency</h3>
+      <ul class="list-disc pl-6 space-y-2 mb-6 text-gray-700">
+        <li><strong>0% Personal Tax:</strong> Retain 100% of your earnings legally.</li>
+        <li><strong>Top Global Infrastructure:</strong> International schools, healthcare, and transport.</li>
+        <li><strong>Ease of Business:</strong> Seamless company formation and corporate banking.</li>
+        <li><strong>Family Sponsorship:</strong> Sponsor spouse, children, and parents easily.</li>
+      </ul>
+
+      <h3 class="text-xl font-bold text-gray-900 mt-8 mb-4 font-cabinet">Primary UAE Visa Options</h3>
+      <div class="space-y-4">
+        <div class="p-4 bg-gray-50 border border-gray-200 rounded-xl">
+          <h4 class="font-bold text-gray-900 mb-1">1. Investor & Partner Visa (2 to 10 Years)</h4>
+          <p class="text-sm text-gray-600">Issued upon setting up a company in Dubai mainland or free zone. Includes Emirates ID and full residency benefits.</p>
+        </div>
+        <div class="p-4 bg-gray-50 border border-gray-200 rounded-xl">
+          <h4 class="font-bold text-gray-900 mb-1">2. 10-Year UAE Golden Visa</h4>
+          <p class="text-sm text-gray-600">Granted to property investors (AED 2M+), top business owners, executives, and specialized talents without a local sponsor.</p>
+        </div>
+      </div>
+      <p class="mt-6 text-sm text-gray-600">
+        <strong>Desert Consultants</strong> manages your complete residency workflow from medical fitness tests to Emirates ID issuance.
+      </p>
+    `
   },
   {
-    title: "Why UAE is the World's Safest Place to Live and Do Business?",
+    id: 4,
+    title: "Why UAE is the World's Safest Place to Live and Do Business",
     slug: "why-uae-is-the-worlds-safest-place-to-live-and-do-business",
-    image: "https://www.catnyxconsultants.com/storage/blogs/GgRKvYSzzkDTvdoG5Hi6Fdq3RekBy0UNml1rLinh.jpg",
+    image: b4_human,
+    category: "Market Insights",
+    readTime: "4 min read",
     date: "Jun 23, 2026",
-    author: "Desert Admin",
-    excerpt: "Read this post to learn more about our latest business insights and updates.",
+    author: "Umair Riaz",
+    authorRole: "CEO, Desert Consultants",
+    excerpt: "Ranked among the safest places globally, the UAE offers security, political stability, and 0% personal tax for international entrepreneurs.",
+    content: `
+      <p class="text-lg font-semibold text-gray-900 mb-4">
+        Safety and stability are the foundations of successful long-term business growth.
+      </p>
+      <p class="mb-4">
+        Global reports rank the UAE at the top for safety and law enforcement efficiency. For business owners, this means zero operational risk from civil disruptions, low crime rates, and reliable judicial enforcement.
+      </p>
+      <h3 class="text-xl font-bold text-gray-900 mt-6 mb-3 font-cabinet">Pillars of UAE Business Security</h3>
+      <ul class="list-disc pl-6 space-y-2 mb-6 text-gray-700">
+        <li><strong>Asset Protection:</strong> Strict legal enforcement protects commercial property, bank accounts, and physical inventory.</li>
+        <li><strong>Financial Security:</strong> Advanced digital banking regulations prevent commercial fraud.</li>
+        <li><strong>Family Peace of Mind:</strong> Safe environment with top international schools and medical care.</li>
+      </ul>
+      <p class="font-semibold text-gray-900">
+        Desert Consultants helps you select the safest mainland or free zone jurisdiction for your specific business activity.
+      </p>
+    `
   },
   {
+    id: 5,
     title: "Why Smart Investors Are Entering the Market Now",
     slug: "why-smart-investors-are-entering-the-market-now",
-    image: "https://www.catnyxconsultants.com/storage/blogs/8SYRyCqKaMYpjcNUf8HsDrw4wwgREJNP1cmKbpCT.jpg",
+    image: b5_human,
+    category: "Investment",
+    readTime: "5 min read",
     date: "Jun 22, 2026",
-    author: "Desert Admin",
-    excerpt: "Read this post to learn more about our latest business insights and updates.",
+    author: "Desert Consultants Team",
+    authorRole: "Investment Advisory",
+    excerpt: "With market stabilization and strong regional growth, early investors are positioning their business structures in the UAE to maximize returns.",
+    content: `
+      <p class="text-lg font-semibold text-gray-900 mb-4">
+        Commercial opportunities move in cycles, and positioning early yields maximum advantage.
+      </p>
+      <p class="mb-4">
+        The UAE market is experiencing steady growth driven by foreign direct investment, tourism, and technology adoption. Entering now allows business owners to secure lower leasing rates and establish a strong market footprint.
+      </p>
+      <h3 class="text-xl font-bold text-gray-900 mt-6 mb-3 font-cabinet">Early Setup Advantages:</h3>
+      <ul class="list-disc pl-6 space-y-2 mb-6 text-gray-700">
+        <li><strong>Lower Initial Overhead:</strong> Lock in competitive office and warehouse leases.</li>
+        <li><strong>Strategic Positioning:</strong> Establish your brand before market density increases.</li>
+        <li><strong>Tax Efficiency:</strong> Benefit from 0% personal income tax and attractive corporate tax exemptions.</li>
+      </ul>
+      <p class="font-bold text-primary">
+        Contact Desert Consultants to design a risk-managed entry strategy tailored to your budget.
+      </p>
+    `
   },
   {
+    id: 6,
     title: "Dubai Limousine Business: The Reality No One Tells You",
     slug: "dubai-limousine-business-the-reality-no-one-tells-you",
-    image: "https://www.catnyxconsultants.com/storage/blogs/kJV3RtNazJN3mq6UzdkstKucp1E0lZggKrWCqTuB.jpg",
+    image: b6_human,
+    category: "Business Guide",
+    readTime: "7 min read",
     date: "Jun 22, 2026",
-    author: "Desert Admin",
-    excerpt: "Read this post to learn more about our latest business insights and updates.",
-  },
+    author: "Desert Consultants Team",
+    authorRole: "Transport Setup Advisor",
+    excerpt: "An insider guide on RTA regulations, vehicle selection, driver commissions, and setup costs for launching a luxury transport business in Dubai.",
+    content: `
+      <p class="text-lg font-semibold text-gray-900 mb-4">
+        Launching a luxury transport business in Dubai requires clear operational insight and strict RTA compliance.
+      </p>
+      <p class="mb-4">
+        Revenue in the limousine sector comes from three main streams: <strong>Corporate Contracts</strong>, <strong>Hotels</strong>, and <strong>App Platforms (Uber/Careem)</strong>. Long-term corporate contracts offer the most predictable cash flow and billing stability.
+      </p>
+      <h3 class="text-xl font-bold text-gray-900 mt-6 mb-3 font-cabinet">Key Operational Factors:</h3>
+      <ul class="list-disc pl-6 space-y-2 mb-6 text-gray-700">
+        <li><strong>Vehicle Selection:</strong> Models like BYD and GMC offer higher margin potential due to steady corporate demand.</li>
+        <li><strong>RTA Fees:</strong> Monthly RTA fees run approximately AED 1,200 per vehicle plate.</li>
+        <li><strong>Fleet Scale:</strong> Full limousine company licenses typically require an initial fleet commitment of ~50 cars.</li>
+      </ul>
+      <p class="font-semibold text-gray-900">
+        Desert Consultants provides complete RTA approval assistance, commercial license registration, and investor visa processing for luxury transport ventures.
+      </p>
+    `
+  }
 ];
 
 export const teamMembers = [
