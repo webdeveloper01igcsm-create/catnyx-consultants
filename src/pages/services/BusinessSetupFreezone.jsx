@@ -57,15 +57,31 @@ const BusinessSetupFreezone = () => {
             <h2 className="text-[28px] sm:text-[40px] font-[900] text-[#020617] leading-tight tracking-tight" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>Why Choose a Free Zone<br />for Your Business?</h2>
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="bg-white border border-gray-200 rounded-sm p-8 hover:shadow-md transition-shadow duration-300">
-              <h3 className="text-[20px] font-[800] text-[#0C69D0] mb-4" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>Free Zone Benefits</h3>
-              <p className="text-[15px] text-[#64748B] leading-relaxed mb-6">Free zones offer 100% foreign ownership, tax exemptions, full profit repatriation, and simplified setup procedures. Each free zone is designed to cater to specific industries and business activities.</p>
-              <Link to="/contact" className="inline-flex items-center gap-2 bg-[#0C69D0] hover:bg-[#0A56AD] text-white font-semibold px-6 py-2.5 rounded-sm text-sm transition-all duration-300">Let's Connect</Link>
+            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300 flex flex-col justify-between group">
+              <div className="h-52 overflow-hidden relative">
+                <img src={m1} alt="Free Zone Benefits" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+              </div>
+              <div className="p-8 flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 className="text-[20px] font-[800] text-[#0C69D0] mb-4" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>Free Zone Benefits</h3>
+                  <p className="text-[15px] text-[#64748B] leading-relaxed mb-6">Free zones offer 100% foreign ownership, tax exemptions, full profit repatriation, and simplified setup procedures. Each free zone is designed to cater to specific industries and business activities.</p>
+                </div>
+                <Link to="/contact" className="inline-flex items-center gap-2 bg-[#0C69D0] hover:bg-[#0A56AD] text-white font-semibold px-6 py-2.5 rounded-sm text-sm transition-all duration-300 w-fit">Let's Connect</Link>
+              </div>
             </motion.div>
-            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.1 }} className="bg-white border border-gray-200 rounded-sm p-8 hover:shadow-md transition-shadow duration-300">
-              <h3 className="text-[20px] font-[800] text-[#0C69D0] mb-4" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>Choosing the Right Free Zone</h3>
-              <p className="text-[15px] text-[#64748B] leading-relaxed mb-6">With over 40 free zones in the UAE, selecting the right one is crucial. Desert Consultants helps you evaluate options based on your business activity, budget, and requirements.</p>
-              <Link to="/contact" className="inline-flex items-center gap-2 bg-[#0C69D0] hover:bg-[#0A56AD] text-white font-semibold px-6 py-2.5 rounded-sm text-sm transition-all duration-300">Let's Connect</Link>
+            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.1 }} className="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300 flex flex-col justify-between group">
+              <div className="h-52 overflow-hidden relative">
+                <img src={m4} alt="Choosing the Right Free Zone" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+              </div>
+              <div className="p-8 flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 className="text-[20px] font-[800] text-[#0C69D0] mb-4" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>Choosing the Right Free Zone</h3>
+                  <p className="text-[15px] text-[#64748B] leading-relaxed mb-6">With over 40 free zones in the UAE, selecting the right one is crucial. Desert Consultants helps you evaluate options based on your business activity, budget, and requirements.</p>
+                </div>
+                <Link to="/contact" className="inline-flex items-center gap-2 bg-[#0C69D0] hover:bg-[#0A56AD] text-white font-semibold px-6 py-2.5 rounded-sm text-sm transition-all duration-300 w-fit">Let's Connect</Link>
+              </div>
             </motion.div>
           </div>
         </div>

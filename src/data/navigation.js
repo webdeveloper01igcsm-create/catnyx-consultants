@@ -41,9 +41,14 @@ export const footerCompany = [
 ];
 
 export const contactInfo = {
-  phone: "0585952349",
+  uaePhone: "+971 58 595 2349",
+  uaePhoneHref: "tel:0585952349",
+  indiaPhone: "+91 9319650940",
+  indiaPhoneHref: "tel:+919319650940",
+  phone: "+971 58 595 2349",
   phoneHref: "tel:0585952349",
   whatsapp: "https://wa.me/971505382297",
+  whatsappIndia: "https://wa.me/919319650940",
   email: "admin@desertconsultants.ae",
   uaeOffice: "DSO-IFZA, IFZA Properties, Dubai Silicon Oasis, Dubai, UAE",
 };

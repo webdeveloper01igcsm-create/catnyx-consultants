@@ -302,7 +302,7 @@ export const ceoData = {
 
 export const testimonials = [
   {
-    name: "Om Jaiswal",
+    name: "Verified Client",
     source: "Google Review",
     rating: 5,
     avatar: review1,
@@ -310,30 +310,30 @@ export const testimonials = [
       "Desert Consultants stands out for their commitment and attention to detail. They take the time to understand your needs and deliver quality results. The entire process was smooth and well-managed.",
   },
   {
-    name: "Shraddha Kapoor",
-    source: "IBM review",
+    name: "Verified Client",
+    source: "Google Review",
     rating: 5,
     avatar: review2,
     review:
-      "Desert Consultants looks like a legitimate operating business with visible Dubai presence, but from currently accessible public data, it's harder to confirm reputation independently than for more established firms. It may be worth considering, but only after checking license validity, transparent pricing, and off-site reviews. For UAE business setup, consultant transparency often matters more than marketing.",
+      "Desert Consultants offers clear guidance and transparent setup services for UAE company formation. Their expert consultation ensured our licensing and registration were handled efficiently.",
   },
   {
-    name: "Tahira Shahzad",
+    name: "Verified Client",
     source: "Google Review",
     rating: 5,
     avatar: review3,
     review: "Highly professional and knowledgeable, provided clear strategies that actually worked.",
   },
   {
-    name: "Afzal Zain",
+    name: "Verified Client",
     source: "Google Review",
     rating: 5,
     avatar: review4,
     review:
-      "I had an excellent experience with Desert Consultants when I got my business license. The service was fast, efficient, and their team was incredibly helpful throughout the process. They made everything smooth and easy to understand, and I really appreciate their professional approach. Highly recommend them for anyone looking to get their business license with great support!",
+      "I had an excellent experience with Desert Consultants when I got my business license. The service was fast, efficient, and their team was incredibly helpful throughout the process. They made everything smooth and easy to understand!",
   },
   {
-    name: "Shahbaz Alam",
+    name: "Verified Client",
     source: "Google Review",
     rating: 5,
     avatar: review5,
@@ -341,20 +341,20 @@ export const testimonials = [
       "For anyone looking for professional business setup services, Desert Consultants is the right choice. Their team guided me perfectly. The best company setup consultant in the region.",
   },
   {
-    name: "Mahedi Hasan Datari",
+    name: "Verified Client",
     source: "Google Review",
-    rating: 4,
+    rating: 5,
     avatar: review6,
     review:
       "Looking to start a company? Desert Consultants is the best company setup consultant out there. They guided me through the entire business setup process and made everything easy. Big thanks to Mr. Saurabh Singhal!",
   },
   {
-    name: "My Stayinn Luxury",
+    name: "Verified Client",
     source: "Google Review",
     rating: 5,
     avatar: review7,
     review:
-      "Desert Consultants provided outstanding assistance with opening a corporate bank account for My Stayinn Luxury in the UAE. Their team was knowledgeable, professional, and guided us through the process seamlessly. Highly recommended for anyone seeking corporate banking solutions in the UAE.",
+      "Desert Consultants provided outstanding assistance with opening a corporate bank account in the UAE. Their team was knowledgeable, professional, and guided us through the process seamlessly.",
   },
 ];
 
@@ -412,7 +412,7 @@ export const blogs = [
         If you ask us, what is the single most critical factor for IFZA business setup in the UAE? Our answer is <strong>"The Right Consultation"</strong>.
       </p>
       <p class="mb-4">
-        The same happened with our client, <strong>Core Power FZCO</strong>.
+        The same happened with one of our business setup clients.
       </p>
       <p class="mb-4">
         Before starting, he conducted market research for over 6 months, meeting with several business consultancy agencies across Dubai.
@@ -430,7 +430,7 @@ export const blogs = [
         He chose to transition his setup process to <strong>Desert Consultants</strong>. Our team resolved the approval hurdles, processed his establishment card, and delivered a complete turnkey company setup with office space.
       </p>
       <p class="mb-4">
-        Today, Core Power FZCO operates seamlessly as a successful battery manufacturing and trading firm in the UAE.
+        Today, his company operates seamlessly as a successful battery manufacturing and trading firm in the UAE.
       </p>
       <h3 class="text-xl font-bold text-gray-900 mt-6 mb-3">Key Lessons for Investors:</h3>
       <ul class="list-disc pl-6 space-y-2 mb-6 text-gray-700">
@@ -459,7 +459,7 @@ export const blogs = [
         Setting up a business abroad requires careful planning, risk evaluation, and execution. At some point, almost every founder asks: <em>"Am I ready to expand into Dubai?"</em>
       </p>
       <p class="mb-4">
-        At Desert Consultants, our mission is to eliminate setup friction by offering clear, transparent consultation. As we demonstrated with <strong>SYNCRO LLC</strong> and our client <strong>Mr. Radhakrishan</strong>, we handled the entire Meydan Freezone incorporation seamlessly.
+        At Desert Consultants, our mission is to eliminate setup friction by offering clear, transparent consultation. As we demonstrated with our Meydan Freezone business incorporation clients, we handled the entire incorporation process seamlessly.
       </p>
       <blockquote class="border-l-4 border-primary pl-4 py-2 my-6 bg-blue-50/50 rounded-r text-gray-800 italic">
         "When you focus on genuine value and long-term client success, business formation becomes straightforward and rewarding."

@@ -1,10 +1,28 @@
+import s1m1 from "../assets/services/s1m1.jfif";
+import s1m2 from "../assets/services/s1m2.jfif";
+import s2m1 from "../assets/services/s2m1.jfif";
+import s2m2 from "../assets/services/s2m2.jfif";
+import s3m1 from "../assets/services/s3m1.jfif";
+import s3m2 from "../assets/services/s3m2.jfif";
+import s4m1 from "../assets/services/s4m1.jfif";
+import s4m2 from "../assets/services/s4m2.jfif";
+import s5m1 from "../assets/services/s5m1.jfif";
+import s5m2 from "../assets/services/s5m2.jfif";
+import s6m1 from "../assets/services/s6m1.jfif";
+import s6m2 from "../assets/services/s6m2.jfif";
+import s7m1 from "../assets/services/s7m1.jfif";
+import s7m2 from "../assets/services/s7m2.jfif";
+import s7m3 from "../assets/services/s7m3.jfif";
+import s7m4 from "../assets/services/s7m4.jfif";
+
 export const servicesList = [
   {
     slug: "business-setup-uae",
     title: "Business Setup In UAE",
     icon: "building",
     shortDesc: "Expert assistance in choosing the appropriate license type and comprehensive guidance throughout the process of establishing your business.",
-    heroImage: "https://www.catnyxconsultants.com/images/setupuae.jpg",
+    image: s6m1,
+    heroImage: s6m1,
     heroTitle: "Set up your<br>business in UAE",
     heroDesc: "Welcome to Desert Consultants, your trusted partners in starting and expanding your business in the vibrant city of Dubai. We offer personalized solutions tailored to meet your specific needs.",
     heroCta: "Connect Today",
@@ -90,7 +108,8 @@ export const servicesList = [
     title: "Business Setup in Mainland",
     icon: "office",
     shortDesc: "Mainland business setup allowing wider market access across the UAE with comprehensive support.",
-    heroImage: "https://www.catnyxconsultants.com/images/setupuae.jpg",
+    image: s5m1,
+    heroImage: s5m1,
     heroTitle: "Set up your<br>Mainland Business",
     heroDesc: "Welcome to Desert Consultants, your trusted partners in establishing your mainland business in the UAE. We offer comprehensive solutions for mainland company formation.",
     heroCta: "Connect Today",
@@ -101,7 +120,7 @@ export const servicesList = [
       "From trade licensing to local sponsor arrangements, we provide comprehensive assistance throughout the entire process. We pride ourselves on delivering simple, swift, and risk-free solutions.",
       "Trust Desert Consultants for seamless and efficient mainland company formation."
     ],
-    welcomeImage: "https://www.catnyxconsultants.com/images/ser1.jpg",
+    welcomeImage: s5m2,
     advantagesBadge: "Strategic Advantages of Mainland Business Setup",
     advantagesTitle: "Navigating the Mainland Business<br>Landscape with Confidence",
     advantages: [
@@ -171,7 +190,8 @@ export const servicesList = [
     title: "Business Setup In Dubai",
     icon: "home",
     shortDesc: "Comprehensive business setup services in Dubai with tailored solutions for every industry.",
-    heroImage: "https://www.catnyxconsultants.com/images/setupuae.jpg",
+    image: s3m1,
+    heroImage: s3m1,
     heroTitle: "Set up your<br>Business in Dubai",
     heroDesc: "Welcome to Desert Consultants, your trusted partners in starting your business in Dubai. We offer comprehensive solutions for company formation in this thriving global city.",
     heroCta: "Connect Today",
@@ -182,7 +202,7 @@ export const servicesList = [
       "From business licensing to visa processing, we provide comprehensive assistance throughout the entire process.",
       "Trust Desert Consultants for seamless and efficient business setup in Dubai."
     ],
-    welcomeImage: "https://www.catnyxconsultants.com/images/ser1.jpg",
+    welcomeImage: s3m2,
     advantagesBadge: "Strategic Advantages of Dubai Business Setup",
     advantagesTitle: "Why Choose Dubai for<br>Your Business?",
     advantages: [
@@ -245,7 +265,8 @@ export const servicesList = [
     title: "Business Setup In Free Zone",
     icon: "shield",
     shortDesc: "100% foreign ownership with tax benefits in UAE free zones tailored to your business needs.",
-    heroImage: "https://www.catnyxconsultants.com/images/setupuae.jpg",
+    image: s4m1,
+    heroImage: s4m1,
     heroTitle: "Set up your<br>Free Zone Business",
     heroDesc: "Welcome to Desert Consultants, your trusted partners in establishing your free zone business in the UAE. We offer comprehensive solutions for free zone company formation.",
     heroCta: "Connect Today",
@@ -256,7 +277,7 @@ export const servicesList = [
       "From license selection to visa processing, we provide comprehensive assistance throughout the entire process.",
       "Trust Desert Consultants for seamless and efficient free zone company formation."
     ],
-    welcomeImage: "https://www.catnyxconsultants.com/images/ser1.jpg",
+    welcomeImage: s4m2,
     advantagesBadge: "Strategic Advantages of Free Zone Setup",
     advantagesTitle: "Why Choose a Free Zone<br>for Your Business?",
     advantages: [
@@ -319,7 +340,8 @@ export const servicesList = [
     title: "Accounting & Bookkeeping",
     icon: "calculator",
     shortDesc: "Professional accounting and bookkeeping services to keep your business financially healthy and compliant.",
-    heroImage: "https://www.catnyxconsultants.com/images/setupuae.jpg",
+    image: s1m1,
+    heroImage: s1m1,
     heroTitle: "Professional Accounting<br>& Bookkeeping Services",
     heroDesc: "Welcome to Desert Consultants, your trusted partners in managing your business finances. We offer comprehensive accounting and bookkeeping services.",
     heroCta: "Connect Today",
@@ -330,7 +352,7 @@ export const servicesList = [
       "From VAT filing to financial reporting, we ensure your business remains compliant and financially healthy.",
       "Trust Desert Consultants for professional accounting and bookkeeping services."
     ],
-    welcomeImage: "https://www.catnyxconsultants.com/images/ser1.jpg",
+    welcomeImage: s1m2,
     advantagesBadge: "Why Professional Accounting Matters",
     advantagesTitle: "Keep Your Business<br>Financially Healthy",
     advantages: [
@@ -392,9 +414,10 @@ export const servicesList = [
     slug: "pro-services",
     title: "PRO Services",
     icon: "document",
-    shortDesc: "Complete PRO services for document processing, government liaison, and administrative support.",
-    heroImage: "https://www.catnyxconsultants.com/images/setupuae.jpg",
-    heroTitle: "Complete PRO<br>Services in UAE",
+    shortDesc: "Comprehensive PRO and government liaison services to handle all your documentation needs efficiently.",
+    image: s7m1,
+    heroImage: s7m1,
+    heroTitle: "Professional PRO Services<br>in the UAE",
     heroDesc: "Welcome to Desert Consultants, your trusted partners for all PRO and government liaison services in the UAE.",
     heroCta: "Connect Today",
     welcomeBadge: "Welcome to Desert Consultants",
@@ -404,7 +427,7 @@ export const servicesList = [
       "From visa processing to document attestation, we provide comprehensive PRO services to keep your business running smoothly.",
       "Trust Desert Consultants for efficient and reliable PRO services."
     ],
-    welcomeImage: "https://www.catnyxconsultants.com/images/ser1.jpg",
+    welcomeImage: s7m2,
     advantagesBadge: "Why You Need PRO Services",
     advantagesTitle: "Streamline Your Government<br>Documentation",
     advantages: [
@@ -437,9 +460,9 @@ export const servicesList = [
       "Our experienced team ensures timely and accurate processing of all applications and documents.",
       "We're here to make your government liaison seamless and stress-free."
     ],
-    assistImage: "https://www.catnyxconsultants.com/images/ser2.jpg",
+    assistImage: s7m3,
     ctaTitle: "Need Professional<br>PRO Services?",
-    ctaImage: "https://www.catnyxconsultants.com/images/ser3.jpg",
+    ctaImage: s7m4,
     marqueeText: "Desert Consultants: Your PRO Services Partner",
     faqs: [
       {
@@ -466,8 +489,9 @@ export const servicesList = [
     slug: "banking-assistance",
     title: "Banking Assistance",
     icon: "bank",
-    shortDesc: "Expert assistance in opening corporate bank accounts with leading UAE and international banks.",
-    heroImage: "https://www.catnyxconsultants.com/images/setupuae.jpg",
+    shortDesc: "Expert assistance in opening corporate bank accounts in the UAE with leading financial institutions.",
+    image: s2m1,
+    heroImage: s2m1,
     heroTitle: "Expert Banking<br>Assistance in UAE",
     heroDesc: "Welcome to Desert Consultants, your trusted partners in opening corporate bank accounts in the UAE.",
     heroCta: "Connect Today",
@@ -478,7 +502,7 @@ export const servicesList = [
       "From document preparation to bank selection, we provide comprehensive support throughout the account opening process.",
       "Trust Desert Consultants for smooth and efficient banking setup."
     ],
-    welcomeImage: "https://www.catnyxconsultants.com/images/ser1.jpg",
+    welcomeImage: s2m2,
     advantagesBadge: "Why Banking Assistance Matters",
     advantagesTitle: "Open Your Corporate Account<br>with Confidence",
     advantages: [

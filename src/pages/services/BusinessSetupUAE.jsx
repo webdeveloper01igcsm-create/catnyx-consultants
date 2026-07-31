@@ -69,15 +69,31 @@ const BusinessSetupUAE = () => {
             </h2>
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="bg-white border border-gray-200 rounded-sm p-8 hover:shadow-md transition-shadow duration-300">
-              <h3 className="text-[20px] font-[800] text-[#0C69D0] mb-4" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>Business Setup in Dubai</h3>
-              <p className="text-[15px] text-[#64748B] leading-relaxed mb-6">Company Formation in Dubai offers several significant advantages, including tax savings, robust governance, superior infrastructure, a premium lifestyle, and ever-expanding opportunities. Additionally, Dubai provides easy access to over 2 billion consumers in multiple markets, all reachable within a 4-hour flight.</p>
-              <Link to="/contact" className="inline-flex items-center gap-2 bg-[#0C69D0] hover:bg-[#0A56AD] text-white font-semibold px-6 py-2.5 rounded-sm text-sm transition-all duration-300">Let's Connect</Link>
+            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300 flex flex-col justify-between group">
+              <div className="h-52 overflow-hidden relative">
+                <img src={m1} alt="Business Setup in Dubai" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+              </div>
+              <div className="p-8 flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 className="text-[20px] font-[800] text-[#0C69D0] mb-4" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>Business Setup in Dubai</h3>
+                  <p className="text-[15px] text-[#64748B] leading-relaxed mb-6">Company Formation in Dubai offers several significant advantages, including tax savings, robust governance, superior infrastructure, a premium lifestyle, and ever-expanding opportunities. Additionally, Dubai provides easy access to over 2 billion consumers in multiple markets, all reachable within a 4-hour flight.</p>
+                </div>
+                <Link to="/contact" className="inline-flex items-center gap-2 bg-[#0C69D0] hover:bg-[#0A56AD] text-white font-semibold px-6 py-2.5 rounded-sm text-sm transition-all duration-300 w-fit">Let's Connect</Link>
+              </div>
             </motion.div>
-            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.1 }} className="bg-white border border-gray-200 rounded-sm p-8 hover:shadow-md transition-shadow duration-300">
-              <h3 className="text-[20px] font-[800] text-[#0C69D0] mb-4" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>Why Set Up Your Business in the UAE?</h3>
-              <p className="text-[15px] text-[#64748B] leading-relaxed mb-6">Establishing a business in Dubai is a strategic move in today's global economy. The UAE presents a thriving business environment, strategic location, world-class infrastructure, and a dynamic market. Desert Consultants is here to assist you every step of the way with customized solutions.</p>
-              <Link to="/contact" className="inline-flex items-center gap-2 bg-[#0C69D0] hover:bg-[#0A56AD] text-white font-semibold px-6 py-2.5 rounded-sm text-sm transition-all duration-300">Let's Connect</Link>
+            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.1 }} className="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300 flex flex-col justify-between group">
+              <div className="h-52 overflow-hidden relative">
+                <img src={m2} alt="Why Set Up Your Business in the UAE?" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+              </div>
+              <div className="p-8 flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 className="text-[20px] font-[800] text-[#0C69D0] mb-4" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>Why Set Up Your Business in the UAE?</h3>
+                  <p className="text-[15px] text-[#64748B] leading-relaxed mb-6">Establishing a business in Dubai is a strategic move in today's global economy. The UAE presents a thriving business environment, strategic location, world-class infrastructure, and a dynamic market. Desert Consultants is here to assist you every step of the way with customized solutions.</p>
+                </div>
+                <Link to="/contact" className="inline-flex items-center gap-2 bg-[#0C69D0] hover:bg-[#0A56AD] text-white font-semibold px-6 py-2.5 rounded-sm text-sm transition-all duration-300 w-fit">Let's Connect</Link>
+              </div>
             </motion.div>
           </div>
         </div>

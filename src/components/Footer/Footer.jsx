@@ -74,11 +74,18 @@ const Footer = () => {
             <h4 className="text-xs font-bold text-gray-body mb-4 uppercase tracking-[0.15em]">Connect</h4>
             <div className="space-y-3">
               <a
-                href={contactInfo.phoneHref}
+                href={contactInfo.uaePhoneHref}
                 className="flex items-center gap-2 text-sm text-gray-body hover:text-primary transition-colors"
               >
-                <Phone className="w-4 h-4" />
-                {contactInfo.phone}
+                <Phone className="w-4 h-4 text-primary" />
+                <span>🇦🇪 {contactInfo.uaePhone}</span>
+              </a>
+              <a
+                href={contactInfo.indiaPhoneHref}
+                className="flex items-center gap-2 text-sm text-gray-body hover:text-primary transition-colors"
+              >
+                <Phone className="w-4 h-4 text-primary" />
+                <span>🇮🇳 {contactInfo.indiaPhone}</span>
               </a>
               <a
                 href={`mailto:${contactInfo.email}`}

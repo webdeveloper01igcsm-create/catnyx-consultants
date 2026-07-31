@@ -1,120 +1,325 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Calculator as CalcIcon, CheckCircle2, ArrowRight, Building2, Users, FileText } from "lucide-react";
+import { Calculator as CalcIcon, CheckCircle2, Building2, Users, Send, ShieldCheck, User } from "lucide-react";
 import { Helmet } from "react-helmet-async";
-import { Link } from "react-router-dom";
 
 const Calculator = () => {
-  const [jurisdiction, setJurisdiction] = useState("freezone");
-  const [visas, setVisas] = useState(1);
-  const [activities, setActivities] = useState(1);
-  const [shareholders, setShareholders] = useState(1);
+  const [formData, setFormData] = useState({
+    jurisdiction: "freezone",
+    activityType: "commercial",
+    visas: 1,
+    shareholders: 1,
+    officeType: "flexi-desk",
+    name: "",
+    email: "",
+    phone: "",
+    notes: "",
+  });
 
-  const baseCosts = {
-    freezone: 10000,
-    mainland: 15000,
-    dubai: 12000,
-  };
-
-  const visaCost = 3500;
-  const activityCost = 500;
-  const shareholderCost = 300;
-
-  const total = baseCosts[jurisdiction] + visas * visaCost + activities * activityCost + shareholders * shareholderCost;
+  const [submitted, setSubmitted] = useState(false);
+  const [errors, setErrors] = useState({});
 
   const jurisdictions = [
-    { value: "freezone", label: "Free Zone", desc: "100% foreign ownership" },
-    { value: "mainland", label: "Mainland", desc: "Wider market access" },
-    { value: "dubai", label: "Dubai Specific", desc: "Premium location" },
+    { value: "freezone", label: "Free Zone", desc: "100% Foreign Ownership & Tax Exemptions" },
+    { value: "mainland", label: "Mainland", desc: "Trade Anywhere in UAE & Global Markets" },
+    { value: "dubai", label: "Dubai Prime", desc: "Premium Business Addresses & Hubs" },
   ];
+
+  const activityTypes = [
+    { value: "commercial", label: "Commercial / General Trading" },
+    { value: "professional", label: "Professional Consultancy & Services" },
+    { value: "ecommerce", label: "E-Commerce & Digital Media" },
+    { value: "industrial", label: "Industrial & Manufacturing" },
+  ];
+
+  const officeTypes = [
+    { value: "flexi-desk", label: "Flexi Desk / Smart Desk" },
+    { value: "virtual", label: "Virtual Office" },
+    { value: "physical", label: "Dedicated Office Space" },
+  ];
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+    if (errors[name]) setErrors({ ...errors, [name]: "" });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const newErrors = {};
+    if (!formData.name.trim()) newErrors.name = "Full name is required";
+    if (!formData.email.trim()) newErrors.email = "Email address is required";
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) newErrors.email = "Please enter a valid email";
+    if (!formData.phone.trim()) newErrors.phone = "Phone number is required";
+
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+      return;
+    }
+
+    setSubmitted(true);
+  };
 
   return (
     <>
       <Helmet>
-        <title>Cost Calculator | Desert Consultants - UAE Business Setup</title>
-        <meta name="description" content="Calculate the estimated cost of setting up your business in the UAE with our free cost calculator from Desert Consultants." />
+        <title>Business Setup Cost Calculator | Desert Consultants</title>
+        <meta name="description" content="Calculate your customized UAE business setup costs by submitting your requirements in our official calculation form." />
       </Helmet>
 
-      <section className="mt-16 lg:mt-20 relative overflow-hidden bg-gradient-to-br from-primary-light via-white to-primary-light py-16 lg:py-24">
+      {/* Header */}
+      <section className="mt-16 lg:mt-20 relative overflow-hidden bg-gradient-to-br from-primary-light via-white to-primary-light py-16 lg:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 text-center">
-          <p className="text-[13px] font-bold text-primary uppercase tracking-[0.2em] mb-4">ESTIMATE YOUR COSTS</p>
-          <h1 className="text-[36px] sm:text-[48px] lg:text-[56px] font-[800] text-[#020617] leading-[1.1] tracking-tight mb-6 font-cabinet">Business Setup Cost Calculator</h1>
-          <p className="text-base md:text-[17px] text-[#52525B] leading-relaxed max-w-2xl mx-auto">Get an instant estimate of your UAE business setup costs. Adjust the parameters to match your requirements.</p>
+          <p className="text-[13px] font-bold text-primary uppercase tracking-[0.2em] mb-4">CUSTOM COST ESTIMATOR</p>
+          <h1 className="text-[36px] sm:text-[48px] lg:text-[56px] font-[800] text-[#020617] leading-[1.1] tracking-tight mb-6 font-cabinet">
+            UAE Business Setup Cost Calculator
+          </h1>
+          <p className="text-base md:text-[17px] text-[#52525B] leading-relaxed max-w-2xl mx-auto">
+            Select your business setup parameters below and submit the calculation form to receive your detailed cost breakdown and government fee schedule.
+          </p>
         </div>
       </section>
 
-      <section className="bg-white py-10">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {/* Form */}
-            <div className="lg:col-span-2 space-y-8">
-              {/* Jurisdiction */}
-              <div className="bg-gray-light rounded-2xl p-6">
-                <h3 className="text-lg font-bold text-dark mb-4 font-cabinet flex items-center gap-2">
-                  <Building2 className="w-5 h-5 text-primary" /> Choose Jurisdiction
+      {/* Form Section */}
+      <section className="bg-white py-12">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          {submitted ? (
+            <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="bg-gray-light rounded-3xl p-8 sm:p-12 text-center border border-gray-100 shadow-sm">
+              <div className="w-20 h-20 bg-primary/10 rounded-3xl flex items-center justify-center mx-auto mb-6">
+                <CheckCircle2 className="w-10 h-10 text-primary" />
+              </div>
+              <h2 className="text-3xl font-extrabold text-dark mb-4 font-cabinet">Calculation Request Received!</h2>
+              <p className="text-gray-body text-base max-w-lg mx-auto mb-8 leading-relaxed">
+                Thank you, <strong className="text-dark">{formData.name}</strong>. We have received your setup parameter selections:
+              </p>
+
+              <div className="bg-white rounded-2xl p-6 text-left max-w-md mx-auto mb-8 border border-gray-200 space-y-3 text-sm text-slate-700 shadow-xs">
+                <div className="flex justify-between">
+                  <span className="text-gray-500">Jurisdiction:</span>
+                  <span className="font-bold capitalize">{formData.jurisdiction}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-gray-500">Business Activity:</span>
+                  <span className="font-bold capitalize">{formData.activityType}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-gray-500">Visas Required:</span>
+                  <span className="font-bold">{formData.visas}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-gray-500">Shareholders:</span>
+                  <span className="font-bold">{formData.shareholders}</span>
+                </div>
+              </div>
+
+              <p className="text-sm text-gray-500 mb-8">
+                Our business setup advisor will send your official fee breakdown to <strong className="text-dark">{formData.email}</strong> and reach out to <strong className="text-dark">{formData.phone}</strong> shortly.
+              </p>
+
+              <button
+                onClick={() => {
+                  setSubmitted(false);
+                  setFormData({ jurisdiction: "freezone", activityType: "commercial", visas: 1, shareholders: 1, officeType: "flexi-desk", name: "", email: "", phone: "", notes: "" });
+                }}
+                className="bg-primary hover:bg-primary-dark text-white text-sm font-bold px-8 py-3.5 rounded-xl transition-all shadow-sm"
+              >
+                Submit Another Calculation Request
+              </button>
+            </motion.div>
+          ) : (
+            <form onSubmit={handleSubmit} className="space-y-10">
+              {/* Step 1: Business Parameters */}
+              <div className="bg-gray-light rounded-3xl p-6 sm:p-8 shadow-xs border border-gray-100">
+                <h3 className="text-xl font-extrabold text-dark mb-6 font-cabinet flex items-center gap-2">
+                  <Building2 className="w-5 h-5 text-primary" /> 1. Select Business Parameters
                 </h3>
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                  {jurisdictions.map((j) => (
-                    <button key={j.value} onClick={() => setJurisdiction(j.value)} className={`p-4 rounded-xl border-2 text-left transition-all ${jurisdiction === j.value ? "border-primary bg-white shadow-sm" : "border-gray-200 bg-white hover:border-primary/30"}`}>
-                      <p className="text-sm font-bold text-dark">{j.label}</p>
-                      <p className="text-xs text-gray-500 mt-1">{j.desc}</p>
-                    </button>
-                  ))}
+
+                <div className="space-y-6">
+                  {/* Jurisdiction */}
+                  <div>
+                    <label className="block text-sm font-bold text-slate-800 mb-3">Choose Jurisdiction</label>
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                      {jurisdictions.map((j) => (
+                        <button
+                          key={j.value}
+                          type="button"
+                          onClick={() => setFormData({ ...formData, jurisdiction: j.value })}
+                          className={`p-4 rounded-xl border-2 text-left transition-all ${
+                            formData.jurisdiction === j.value ? "border-primary bg-white shadow-xs" : "border-gray-200 bg-white hover:border-primary/40"
+                          }`}
+                        >
+                          <p className="text-sm font-bold text-dark">{j.label}</p>
+                          <p className="text-xs text-gray-500 mt-1">{j.desc}</p>
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Business Activity Type */}
+                  <div>
+                    <label className="block text-sm font-bold text-slate-800 mb-3">Primary Business Activity</label>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                      {activityTypes.map((act) => (
+                        <button
+                          key={act.value}
+                          type="button"
+                          onClick={() => setFormData({ ...formData, activityType: act.value })}
+                          className={`p-3.5 rounded-xl border-2 text-left text-sm font-semibold transition-all ${
+                            formData.activityType === act.value ? "border-primary bg-white text-primary shadow-xs" : "border-gray-200 bg-white text-gray-700 hover:border-primary/40"
+                          }`}
+                        >
+                          {act.label}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Visas & Shareholders Sliders */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-2">
+                    <div className="bg-white p-4 rounded-2xl border border-gray-200">
+                      <div className="flex justify-between items-center mb-2">
+                        <label className="text-xs font-bold text-slate-700 flex items-center gap-1.5"><Users className="w-4 h-4 text-primary" /> Residence Visas Required</label>
+                        <span className="text-sm font-extrabold text-primary font-cabinet">{formData.visas}</span>
+                      </div>
+                      <input
+                        type="range"
+                        min="0"
+                        max="10"
+                        value={formData.visas}
+                        onChange={(e) => setFormData({ ...formData, visas: Number(e.target.value) })}
+                        className="w-full accent-[#0C69D0]"
+                      />
+                      <div className="flex justify-between text-[11px] text-gray-400 mt-1">
+                        <span>0 Visas</span>
+                        <span>10 Visas</span>
+                      </div>
+                    </div>
+
+                    <div className="bg-white p-4 rounded-2xl border border-gray-200">
+                      <div className="flex justify-between items-center mb-2">
+                        <label className="text-xs font-bold text-slate-700 flex items-center gap-1.5"><Users className="w-4 h-4 text-primary" /> Number of Shareholders</label>
+                        <span className="text-sm font-extrabold text-primary font-cabinet">{formData.shareholders}</span>
+                      </div>
+                      <input
+                        type="range"
+                        min="1"
+                        max="5"
+                        value={formData.shareholders}
+                        onChange={(e) => setFormData({ ...formData, shareholders: Number(e.target.value) })}
+                        className="w-full accent-[#0C69D0]"
+                      />
+                      <div className="flex justify-between text-[11px] text-gray-400 mt-1">
+                        <span>1 Shareholder</span>
+                        <span>5+ Shareholders</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Office Space Requirement */}
+                  <div>
+                    <label className="block text-sm font-bold text-slate-800 mb-3">Office Space Preference</label>
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                      {officeTypes.map((off) => (
+                        <button
+                          key={off.value}
+                          type="button"
+                          onClick={() => setFormData({ ...formData, officeType: off.value })}
+                          className={`p-3.5 rounded-xl border-2 text-center text-xs font-bold transition-all ${
+                            formData.officeType === off.value ? "border-primary bg-white text-primary shadow-xs" : "border-gray-200 bg-white text-gray-700 hover:border-primary/40"
+                          }`}
+                        >
+                          {off.label}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </div>
 
-              {/* Sliders */}
-              <div className="bg-gray-light rounded-2xl p-6 space-y-6">
-                <div>
-                  <div className="flex items-center justify-between mb-3">
-                    <label className="text-sm font-bold text-dark flex items-center gap-2"><Users className="w-4 h-4 text-primary" /> Number of Visas</label>
-                    <span className="text-sm font-extrabold text-primary font-cabinet">{visas}</span>
+              {/* Step 2: Contact Form to Submit Calculation */}
+              <div className="bg-gray-light rounded-3xl p-6 sm:p-8 shadow-xs border border-gray-100 space-y-6">
+                <h3 className="text-xl font-extrabold text-dark font-cabinet flex items-center gap-2">
+                  <User className="w-5 h-5 text-primary" /> 2. Enter Contact Info to Receive Full Cost Calculation
+                </h3>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-sm font-semibold text-slate-700 mb-1.5">
+                      Full Name <span className="text-red-500">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      placeholder="Your full name"
+                      className={`w-full rounded-xl border px-4 py-3 text-sm font-medium text-slate-800 outline-none focus:border-[#0C69D0] focus:ring-1 focus:ring-[#0C69D0] ${
+                        errors.name ? "border-red-500" : "border-slate-200"
+                      }`}
+                    />
+                    {errors.name && <p className="text-xs text-red-500 mt-1">{errors.name}</p>}
                   </div>
-                  <input type="range" min="1" max="10" value={visas} onChange={(e) => setVisas(Number(e.target.value))} className="w-full accent-[#0C69D0]" />
-                  <p className="text-xs text-gray-400 mt-1">AED {visaCost} per visa</p>
+
+                  <div>
+                    <label className="block text-sm font-semibold text-slate-700 mb-1.5">
+                      Business Email <span className="text-red-500">*</span>
+                    </label>
+                    <input
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      placeholder="you@company.com"
+                      className={`w-full rounded-xl border px-4 py-3 text-sm font-medium text-slate-800 outline-none focus:border-[#0C69D0] focus:ring-1 focus:ring-[#0C69D0] ${
+                        errors.email ? "border-red-500" : "border-slate-200"
+                      }`}
+                    />
+                    {errors.email && <p className="text-xs text-red-500 mt-1">{errors.email}</p>}
+                  </div>
                 </div>
 
                 <div>
-                  <div className="flex items-center justify-between mb-3">
-                    <label className="text-sm font-bold text-dark flex items-center gap-2"><FileText className="w-4 h-4 text-primary" /> Business Activities</label>
-                    <span className="text-sm font-extrabold text-primary font-cabinet">{activities}</span>
-                  </div>
-                  <input type="range" min="1" max="5" value={activities} onChange={(e) => setActivities(Number(e.target.value))} className="w-full accent-[#0C69D0]" />
-                  <p className="text-xs text-gray-400 mt-1">AED {activityCost} per additional activity</p>
+                  <label className="block text-sm font-semibold text-slate-700 mb-1.5">
+                    Phone / WhatsApp Number <span className="text-red-500">*</span>
+                  </label>
+                  <input
+                    type="tel"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    placeholder="+971 50 000 0000 or +91 90000 00000"
+                    className={`w-full rounded-xl border px-4 py-3 text-sm font-medium text-slate-800 outline-none focus:border-[#0C69D0] focus:ring-1 focus:ring-[#0C69D0] ${
+                      errors.phone ? "border-red-500" : "border-slate-200"
+                    }`}
+                  />
+                  {errors.phone && <p className="text-xs text-red-500 mt-1">{errors.phone}</p>}
                 </div>
 
                 <div>
-                  <div className="flex items-center justify-between mb-3">
-                    <label className="text-sm font-bold text-dark flex items-center gap-2"><Users className="w-4 h-4 text-primary" /> Shareholders</label>
-                    <span className="text-sm font-extrabold text-primary font-cabinet">{shareholders}</span>
-                  </div>
-                  <input type="range" min="1" max="5" value={shareholders} onChange={(e) => setShareholders(Number(e.target.value))} className="w-full accent-[#0C69D0]" />
-                  <p className="text-xs text-gray-400 mt-1">AED {shareholderCost} per shareholder</p>
+                  <label className="block text-sm font-semibold text-slate-700 mb-1.5">Additional Notes (Optional)</label>
+                  <textarea
+                    name="notes"
+                    value={formData.notes}
+                    onChange={handleChange}
+                    rows="3"
+                    placeholder="Tell us any specific requirements, timeline, or preferred free zone..."
+                    className="w-full rounded-xl border border-slate-200 px-4 py-3 text-sm font-medium text-slate-800 outline-none focus:border-[#0C69D0] focus:ring-1 focus:ring-[#0C69D0] resize-none"
+                  ></textarea>
                 </div>
+
+                <button
+                  type="submit"
+                  className="w-full inline-flex items-center justify-center gap-2 bg-[#0C69D0] hover:bg-[#0A56AD] text-white text-base font-bold px-8 py-4 rounded-xl transition-all duration-300 shadow-md hover:shadow-lg"
+                >
+                  <CalcIcon className="w-5 h-5" /> Calculate & Send Detailed Breakdown <Send className="w-4 h-4 ml-1" />
+                </button>
+
+                <p className="text-xs text-gray-500 text-center font-medium flex items-center justify-center gap-1.5">
+                  <ShieldCheck className="w-4 h-4 text-emerald-600" /> Your information is 100% confidential. Official fee breakdown will be sent directly to you.
+                </p>
               </div>
-            </div>
-
-            {/* Summary */}
-            <div className="lg:col-span-1">
-              <div className="bg-primary rounded-2xl p-6 text-white sticky top-24">
-                <h3 className="text-lg font-bold mb-4 font-cabinet flex items-center gap-2"><CalcIcon className="w-5 h-5" /> Cost Summary</h3>
-                <div className="space-y-3 mb-6">
-                  <div className="flex justify-between text-sm"><span>Base License</span><span className="font-bold">AED {baseCosts[jurisdiction].toLocaleString()}</span></div>
-                  <div className="flex justify-between text-sm"><span>Visas ({visas})</span><span className="font-bold">AED {(visas * visaCost).toLocaleString()}</span></div>
-                  <div className="flex justify-between text-sm"><span>Activities ({activities})</span><span className="font-bold">AED {(activities * activityCost).toLocaleString()}</span></div>
-                  <div className="flex justify-between text-sm"><span>Shareholders ({shareholders})</span><span className="font-bold">AED {(shareholders * shareholderCost).toLocaleString()}</span></div>
-                </div>
-                <div className="border-t border-white/20 pt-4 mb-6">
-                  <div className="flex justify-between items-baseline">
-                    <span className="text-sm">Estimated Total</span>
-                    <span className="text-2xl font-extrabold font-cabinet">AED {total.toLocaleString()}</span>
-                  </div>
-                </div>
-                <Link to="/contact" className="block w-full text-center bg-white text-primary hover:bg-gray-100 text-sm font-bold py-3 rounded-lg transition-all">Get a Detailed Quote <ArrowRight className="w-4 h-4 inline" /></Link>
-                <p className="text-xs text-white/60 mt-4 text-center">* This is an estimate. Final costs may vary based on specific requirements.</p>
-              </div>
-            </div>
-          </div>
+            </form>
+          )}
         </div>
       </section>
     </>

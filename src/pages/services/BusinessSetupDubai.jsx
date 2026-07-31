@@ -57,15 +57,31 @@ const BusinessSetupDubai = () => {
             <h2 className="text-[28px] sm:text-[40px] font-[900] text-[#020617] leading-tight tracking-tight" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>Why Choose Dubai for<br />Your Business?</h2>
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="bg-white border border-gray-200 rounded-sm p-8 hover:shadow-md transition-shadow duration-300">
-              <h3 className="text-[20px] font-[800] text-[#0C69D0] mb-4" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>Dubai's Business Environment</h3>
-              <p className="text-[15px] text-[#64748B] leading-relaxed mb-6">Dubai offers a world-class business environment with state-of-the-art infrastructure, strategic location connecting East and West, and a tax-friendly regime. The city is home to over 20 free zones and a thriving mainland business sector.</p>
-              <Link to="/contact" className="inline-flex items-center gap-2 bg-[#0C69D0] hover:bg-[#0A56AD] text-white font-semibold px-6 py-2.5 rounded-sm text-sm transition-all duration-300">Let's Connect</Link>
+            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300 flex flex-col justify-between group">
+              <div className="h-52 overflow-hidden relative">
+                <img src={m1} alt="Dubai Business Environment" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+              </div>
+              <div className="p-8 flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 className="text-[20px] font-[800] text-[#0C69D0] mb-4" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>Dubai's Business Environment</h3>
+                  <p className="text-[15px] text-[#64748B] leading-relaxed mb-6">Dubai offers a world-class business environment with state-of-the-art infrastructure, strategic location connecting East and West, and a tax-friendly regime. The city is home to over 20 free zones and a thriving mainland business sector.</p>
+                </div>
+                <Link to="/contact" className="inline-flex items-center gap-2 bg-[#0C69D0] hover:bg-[#0A56AD] text-white font-semibold px-6 py-2.5 rounded-sm text-sm transition-all duration-300 w-fit">Let's Connect</Link>
+              </div>
             </motion.div>
-            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.1 }} className="bg-white border border-gray-200 rounded-sm p-8 hover:shadow-md transition-shadow duration-300">
-              <h3 className="text-[20px] font-[800] text-[#0C69D0] mb-4" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>Growth Opportunities in Dubai</h3>
-              <p className="text-[15px] text-[#64748B] leading-relaxed mb-6">Dubai continues to be a global hub for trade, tourism, and innovation. With Expo legacy projects and ongoing economic diversification, the city offers unparalleled growth opportunities for businesses of all sizes.</p>
-              <Link to="/contact" className="inline-flex items-center gap-2 bg-[#0C69D0] hover:bg-[#0A56AD] text-white font-semibold px-6 py-2.5 rounded-sm text-sm transition-all duration-300">Let's Connect</Link>
+            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.1 }} className="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300 flex flex-col justify-between group">
+              <div className="h-52 overflow-hidden relative">
+                <img src={m4} alt="Growth Opportunities in Dubai" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+              </div>
+              <div className="p-8 flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 className="text-[20px] font-[800] text-[#0C69D0] mb-4" style={{ fontFamily: "'Cabinet Grotesk', sans-serif" }}>Growth Opportunities in Dubai</h3>
+                  <p className="text-[15px] text-[#64748B] leading-relaxed mb-6">Dubai continues to be a global hub for trade, tourism, and innovation. With Expo legacy projects and ongoing economic diversification, the city offers unparalleled growth opportunities for businesses of all sizes.</p>
+                </div>
+                <Link to="/contact" className="inline-flex items-center gap-2 bg-[#0C69D0] hover:bg-[#0A56AD] text-white font-semibold px-6 py-2.5 rounded-sm text-sm transition-all duration-300 w-fit">Let's Connect</Link>
+              </div>
             </motion.div>
           </div>
         </div>

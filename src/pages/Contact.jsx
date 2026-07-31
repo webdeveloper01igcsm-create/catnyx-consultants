@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Phone, Mail, MapPin, Send, CheckCircle2, Clock } from "lucide-react";
+import { Phone, Mail, MapPin, Send, CheckCircle2, Clock, MessageSquare } from "lucide-react";
 import { Helmet } from "react-helmet-async";
 import { contactInfo } from "../data/navigation";
 
@@ -42,21 +42,43 @@ const Contact = () => {
 
       <section className="bg-white py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="bg-gray-light rounded-2xl p-8 text-center hover:shadow-md transition-shadow">
-              <div className="w-14 h-14 bg-primary rounded-2xl flex items-center justify-center mx-auto mb-4"><Phone className="w-7 h-7 text-white" /></div>
-              <h3 className="text-lg font-bold text-dark mb-2 font-cabinet">Call Us</h3>
-              <a href={contactInfo.phoneHref} className="text-sm text-gray-body hover:text-primary transition-colors">{contactInfo.phone}</a>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="bg-gray-light rounded-2xl p-6 text-center hover:shadow-md transition-shadow flex flex-col justify-between">
+              <div>
+                <div className="w-12 h-12 bg-primary rounded-2xl flex items-center justify-center mx-auto mb-3"><Phone className="w-6 h-6 text-white" /></div>
+                <h3 className="text-base font-bold text-dark mb-1 font-cabinet">🇦🇪 UAE Support</h3>
+                <a href={contactInfo.uaePhoneHref} className="block text-sm font-semibold text-gray-body hover:text-primary transition-colors mb-2">{contactInfo.uaePhone}</a>
+              </div>
+              <a href={contactInfo.whatsapp} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-1.5 text-xs font-bold text-emerald-600 hover:text-emerald-700 bg-emerald-50 py-1.5 px-3 rounded-lg transition-colors mt-2">
+                <MessageSquare className="w-3.5 h-3.5" /> WhatsApp UAE
+              </a>
             </motion.div>
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.1 }} className="bg-gray-light rounded-2xl p-8 text-center hover:shadow-md transition-shadow">
-              <div className="w-14 h-14 bg-primary rounded-2xl flex items-center justify-center mx-auto mb-4"><Mail className="w-7 h-7 text-white" /></div>
-              <h3 className="text-lg font-bold text-dark mb-2 font-cabinet">Email Us</h3>
-              <a href={`mailto:${contactInfo.email}`} className="text-sm text-gray-body hover:text-primary transition-colors break-all">{contactInfo.email}</a>
+
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.05 }} className="bg-gray-light rounded-2xl p-6 text-center hover:shadow-md transition-shadow flex flex-col justify-between">
+              <div>
+                <div className="w-12 h-12 bg-primary rounded-2xl flex items-center justify-center mx-auto mb-3"><Phone className="w-6 h-6 text-white" /></div>
+                <h3 className="text-base font-bold text-dark mb-1 font-cabinet">🇮🇳 India Support</h3>
+                <a href={contactInfo.indiaPhoneHref} className="block text-sm font-semibold text-gray-body hover:text-primary transition-colors mb-2">{contactInfo.indiaPhone}</a>
+              </div>
+              <a href={contactInfo.whatsappIndia} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-1.5 text-xs font-bold text-emerald-600 hover:text-emerald-700 bg-emerald-50 py-1.5 px-3 rounded-lg transition-colors mt-2">
+                <MessageSquare className="w-3.5 h-3.5" /> WhatsApp India
+              </a>
             </motion.div>
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.2 }} className="bg-gray-light rounded-2xl p-8 text-center hover:shadow-md transition-shadow">
-              <div className="w-14 h-14 bg-primary rounded-2xl flex items-center justify-center mx-auto mb-4"><Clock className="w-7 h-7 text-white" /></div>
-              <h3 className="text-lg font-bold text-dark mb-2 font-cabinet">Working Hours</h3>
-              <p className="text-sm text-gray-body">Mon - Sat: 9:00 AM - 6:00 PM</p>
+
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.1 }} className="bg-gray-light rounded-2xl p-6 text-center hover:shadow-md transition-shadow flex flex-col justify-between">
+              <div>
+                <div className="w-12 h-12 bg-primary rounded-2xl flex items-center justify-center mx-auto mb-3"><Mail className="w-6 h-6 text-white" /></div>
+                <h3 className="text-base font-bold text-dark mb-1 font-cabinet">Email Us</h3>
+                <a href={`mailto:${contactInfo.email}`} className="text-sm font-semibold text-gray-body hover:text-primary transition-colors break-all">{contactInfo.email}</a>
+              </div>
+            </motion.div>
+
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.15 }} className="bg-gray-light rounded-2xl p-6 text-center hover:shadow-md transition-shadow flex flex-col justify-between">
+              <div>
+                <div className="w-12 h-12 bg-primary rounded-2xl flex items-center justify-center mx-auto mb-3"><Clock className="w-6 h-6 text-white" /></div>
+                <h3 className="text-base font-bold text-dark mb-1 font-cabinet">Working Hours</h3>
+                <p className="text-sm font-semibold text-gray-body">Mon - Sat: 9:00 AM - 6:00 PM</p>
+              </div>
             </motion.div>
           </div>
         </div>
@@ -110,12 +132,34 @@ const Contact = () => {
             </div>
 
             <div>
-              <h2 className="text-[24px] sm:text-[28px] font-[800] text-[#0C69D0] mb-6 font-cabinet">Our Office</h2>
-              <div className="space-y-6 mb-8">
+              <h2 className="text-[24px] sm:text-[28px] font-[800] text-[#0C69D0] mb-6 font-cabinet">Our Office & Direct Contact</h2>
+              <div className="space-y-4 mb-8">
                 <div className="bg-white rounded-2xl p-6 shadow-sm">
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 bg-primary-light rounded-xl flex items-center justify-center flex-shrink-0"><MapPin className="w-6 h-6 text-primary" /></div>
                     <div><h3 className="text-base font-bold text-dark mb-1 font-cabinet">UAE Office</h3><p className="text-sm text-gray-body leading-relaxed">{contactInfo.uaeOffice}</p></div>
+                  </div>
+                </div>
+                <div className="bg-white rounded-2xl p-6 shadow-sm">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-primary-light rounded-xl flex items-center justify-center flex-shrink-0"><Phone className="w-6 h-6 text-primary" /></div>
+                    <div className="space-y-3 w-full">
+                      <h3 className="text-base font-bold text-dark font-cabinet">Direct Phone & WhatsApp Support</h3>
+                      <div className="flex flex-wrap items-center justify-between gap-2 pt-1 border-t border-gray-100">
+                        <div className="flex items-center gap-2">
+                          <span className="text-sm font-bold text-gray-700">🇦🇪 UAE:</span>
+                          <a href={contactInfo.uaePhoneHref} className="text-sm font-bold text-primary hover:underline">{contactInfo.uaePhone}</a>
+                        </div>
+                        <a href={contactInfo.whatsapp} target="_blank" rel="noopener noreferrer" className="text-xs font-bold text-emerald-600 hover:underline">WhatsApp UAE</a>
+                      </div>
+                      <div className="flex flex-wrap items-center justify-between gap-2 pt-2 border-t border-gray-100">
+                        <div className="flex items-center gap-2">
+                          <span className="text-sm font-bold text-gray-700">🇮🇳 India:</span>
+                          <a href={contactInfo.indiaPhoneHref} className="text-sm font-bold text-primary hover:underline">{contactInfo.indiaPhone}</a>
+                        </div>
+                        <a href={contactInfo.whatsappIndia} target="_blank" rel="noopener noreferrer" className="text-xs font-bold text-emerald-600 hover:underline">WhatsApp India</a>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>

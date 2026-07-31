@@ -9,7 +9,6 @@ import {
   services,
   steps,
   stats,
-  clients,
   packages,
   ceoData,
   testimonials,
@@ -213,25 +212,6 @@ const Home = () => {
       </section>
 
 
-      {/* CLIENTS MARQUEE */}
-      <section className="bg-gray-light py-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
-          <div className="text-start max-w-xl mb-12">
-            <p className="text-xs font-semibold text-slate-400 uppercase tracking-widest mb-2">TRUSTED BY</p>
-            <h2 className="text-[28px] sm:text-[32px] lg:text-[36px] font-[800] text-[#000000] leading-[40px] tracking-[-0.9px] font-cabinet">Our Clients</h2>
-            <p className="text-xs font-semibold text-black uppercase tracking-widest mb-2">We are proud to have collaborated with a diverse range of clients, helping them achieve success in the UAE.</p>
-          </div>
-          <div className="marquee-wrap">
-            <div className="marquee-track">
-              {[...clients, ...clients].map((c, i) => (
-                <div key={i} className="marquee-item flex items-center justify-center h-20 w-40 ">
-                  <img src={c.img} alt={c.name} className="max-h-29 w-auto object-contain  rounded-full" />
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* PACKAGES SECTION */}
       <section className="bg-white py-10">
