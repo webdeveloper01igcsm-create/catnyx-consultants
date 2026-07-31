@@ -1,328 +1,606 @@
-import { useState } from "react";
-import { motion } from "framer-motion";
-import { Calculator as CalcIcon, CheckCircle2, Building2, Users, Send, ShieldCheck, User } from "lucide-react";
-import { Helmet } from "react-helmet-async";
+import React, { useState } from "react";
+import { X, Search, ChevronDown, CheckCircle2, Phone, RotateCcw } from "lucide-react";
+import { contactInfo } from "../data/navigation";
+
+const businessActivities = [
+  "Commercial & Trading",
+  "Management & Business Consultancy",
+  "E-Commerce & Digital Portal",
+  "General Trading",
+  "IT & Technology Services",
+  "Marketing & Advertising Agency",
+  "Real Estate & Property Management",
+  "Healthcare & Medical Services",
+  "Financial & Investment Advisory",
+  "Industrial & Manufacturing",
+  "Logistics & Freight Forwarding",
+  "Event Management & Tourism",
+  "Education & Training Services",
+  "Food & Beverage / Restaurant",
+  "Media Production & Design",
+];
+
+const locations = [
+  "Dubai",
+  "Sharjah",
+  "Abu Dhabi",
+  "Ajman",
+  "Ras Al Khaimah",
+  "Fujairah",
+  "Umm Al Quwain",
+];
+
+const jurisdictions = ["Free zone", "Mainland", "Not Sure", "Off-shore"];
+const ownerOptions = ["1 to 5", "6 or more", "Not Sure"];
+const officeOptions = ["Yes", "No"];
+const visaOptions = ["1 to 5", "6 to 10", "10 to 15", "16 to 20", "21 or more", "Unlimited"];
 
 const Calculator = () => {
-  const [formData, setFormData] = useState({
-    jurisdiction: "freezone",
-    activityType: "commercial",
-    visas: 1,
-    shareholders: 1,
-    officeType: "flexi-desk",
-    name: "",
-    email: "",
-    phone: "",
-    notes: "",
-  });
+  const [isModalOpen, setIsModalOpen] = useState(true);
+  const [step, setStep] = useState(1);
 
-  const [submitted, setSubmitted] = useState(false);
-  const [errors, setErrors] = useState({});
+  // Form selections
+  const [activity, setActivity] = useState("");
+  const [activitySearch, setActivitySearch] = useState("");
+  const [isActivityDropdownOpen, setIsActivityDropdownOpen] = useState(false);
 
-  const jurisdictions = [
-    { value: "freezone", label: "Free Zone", desc: "100% Foreign Ownership & Tax Exemptions" },
-    { value: "mainland", label: "Mainland", desc: "Trade Anywhere in UAE & Global Markets" },
-    { value: "dubai", label: "Dubai Prime", desc: "Premium Business Addresses & Hubs" },
-  ];
+  const [location, setLocation] = useState("Dubai");
+  const [jurisdiction, setJurisdiction] = useState("Free zone");
 
-  const activityTypes = [
-    { value: "commercial", label: "Commercial / General Trading" },
-    { value: "professional", label: "Professional Consultancy & Services" },
-    { value: "ecommerce", label: "E-Commerce & Digital Media" },
-    { value: "industrial", label: "Industrial & Manufacturing" },
-  ];
+  const [owners, setOwners] = useState("1 to 5");
+  const [office, setOffice] = useState("Yes");
 
-  const officeTypes = [
-    { value: "flexi-desk", label: "Flexi Desk / Smart Desk" },
-    { value: "virtual", label: "Virtual Office" },
-    { value: "physical", label: "Dedicated Office Space" },
-  ];
+  const [visas, setVisas] = useState("1 to 5");
+  const [businessName, setBusinessName] = useState("");
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-    if (errors[name]) setErrors({ ...errors, [name]: "" });
+  // Lead Contact Form
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [formErrors, setFormErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const filteredActivities = businessActivities.filter((act) =>
+    act.toLowerCase().includes(activitySearch.toLowerCase())
+  );
+
+  const getProgressPercentage = () => {
+    switch (step) {
+      case 1:
+        return 20;
+      case 2:
+        return 40;
+      case 3:
+        return 60;
+      case 4:
+        return 80;
+      case 5:
+        return 100;
+      default:
+        return 100;
+    }
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const newErrors = {};
-    if (!formData.name.trim()) newErrors.name = "Full name is required";
-    if (!formData.email.trim()) newErrors.email = "Email address is required";
-    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) newErrors.email = "Please enter a valid email";
-    if (!formData.phone.trim()) newErrors.phone = "Phone number is required";
+  const handleNext = () => {
+    if (step === 1 && !activity) {
+      setActivity("Commercial & Trading");
+    }
+    if (step < 5) {
+      setStep(step + 1);
+    }
+  };
 
-    if (Object.keys(newErrors).length > 0) {
-      setErrors(newErrors);
-      return;
+  const handlePrevious = () => {
+    if (step > 1) {
+      setStep(step - 1);
+    }
+  };
+
+  const validateLeadForm = () => {
+    const errs = {};
+    if (!name.trim()) errs.name = "Please enter your full name.";
+    if (!email.trim() || !/\S+@\S+\.\S+/.test(email)) errs.email = "Please enter a valid email address.";
+    if (!phone.trim() || phone.trim().length < 7) errs.phone = "Please enter a valid contact number.";
+    setFormErrors(errs);
+    return Object.keys(errs).length === 0;
+  };
+
+  const handleFinalSubmit = (e) => {
+    e.preventDefault();
+    if (!validateLeadForm()) return;
+
+    setIsSubmitting(true);
+    setTimeout(() => {
+      setIsSubmitting(false);
+      setStep(6);
+    }, 600);
+  };
+
+  const calculateEstimate = () => {
+    let min = 12500;
+    let max = 16500;
+
+    if (jurisdiction === "Mainland") {
+      min += 6000;
+      max += 9000;
+    } else if (jurisdiction === "Off-shore") {
+      min -= 2000;
+      max -= 3000;
     }
 
-    setSubmitted(true);
+    if (location === "Dubai") {
+      min += 2000;
+      max += 3500;
+    }
+
+    if (office === "Yes") {
+      min += 5000;
+      max += 10000;
+    }
+
+    if (visas === "6 to 10") {
+      min += 8000;
+      max += 12000;
+    } else if (visas === "10 to 15" || visas === "16 to 20") {
+      min += 15000;
+      max += 22000;
+    }
+
+    return {
+      min: min.toLocaleString(),
+      max: max.toLocaleString(),
+    };
   };
 
-  return (
-    <>
-      <Helmet>
-        <title>Business Setup Cost Calculator | Desert Consultants</title>
-        <meta name="description" content="Calculate your customized UAE business setup costs by submitting your requirements in our official calculation form." />
-      </Helmet>
+  const result = calculateEstimate();
 
-      {/* Header */}
-      <section className="mt-16 lg:mt-20 relative overflow-hidden bg-gradient-to-br from-primary-light via-white to-primary-light py-16 lg:py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 text-center">
-          <p className="text-[13px] font-bold text-primary uppercase tracking-[0.2em] mb-4">CUSTOM COST ESTIMATOR</p>
-          <h1 className="text-[36px] sm:text-[48px] lg:text-[56px] font-[800] text-[#020617] leading-[1.1] tracking-tight mb-6 font-cabinet">
-            UAE Business Setup Cost Calculator
-          </h1>
-          <p className="text-base md:text-[17px] text-[#52525B] leading-relaxed max-w-2xl mx-auto">
-            Select your business setup parameters below and submit the calculation form to receive your detailed cost breakdown and government fee schedule.
+  return (
+    <div className="min-h-screen bg-[#F8FAFC] text-[#0F172A] relative">
+      {/* HERO SECTION */}
+      <section className="pt-28 pb-20 px-4 sm:px-6 lg:px-12 bg-white border-b border-gray-100 text-center">
+        <div className="max-w-3xl mx-auto pt-6">
+          <p className="text-xs font-bold text-[#0C69D0] uppercase tracking-[0.2em] mb-3">
+            CALCULATOR
           </p>
+
+          <h1 className="text-3xl sm:text-5xl font-black text-[#0F172A] font-cabinet leading-tight mb-4">
+            Know the Exact UAE <span className="text-[#0C69D0]">Business Setup</span> Costs.
+          </h1>
+
+          <p className="text-sm sm:text-base text-gray-600 max-w-xl mx-auto leading-relaxed mb-8">
+            Because smart business owners rely on facts, not hearsay. Calculate your estimated setup costs dynamically in under a minute.
+          </p>
+
+          <button
+            onClick={() => {
+              setIsModalOpen(true);
+              setStep(1);
+            }}
+            className="inline-flex items-center gap-2 bg-[#0C69D0] hover:bg-[#0A56AD] text-white font-bold px-7 py-3 rounded-lg text-sm transition-all shadow-md cursor-pointer"
+          >
+            <span>Calculate Now</span>
+            <span>→</span>
+          </button>
         </div>
       </section>
 
-      {/* Form Section */}
-      <section className="bg-white py-12">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          {submitted ? (
-            <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="bg-gray-light rounded-3xl p-8 sm:p-12 text-center border border-gray-100 shadow-sm">
-              <div className="w-20 h-20 bg-primary/10 rounded-3xl flex items-center justify-center mx-auto mb-6">
-                <CheckCircle2 className="w-10 h-10 text-primary" />
-              </div>
-              <h2 className="text-3xl font-extrabold text-dark mb-4 font-cabinet">Calculation Request Received!</h2>
-              <p className="text-gray-body text-base max-w-lg mx-auto mb-8 leading-relaxed">
-                Thank you, <strong className="text-dark">{formData.name}</strong>. We have received your setup parameter selections:
-              </p>
+      {/* CALCULATOR MODAL OVERLAY */}
+      {isModalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-xs">
+          <div className="bg-white rounded-2xl shadow-xl w-full max-w-lg overflow-hidden border border-gray-200 relative text-left">
+            {/* CLOSE BUTTON */}
+            <button
+              onClick={() => setIsModalOpen(false)}
+              className="absolute top-5 right-5 text-gray-400 hover:text-gray-700 transition-colors p-1 rounded-full hover:bg-gray-100 cursor-pointer"
+            >
+              <X className="w-5 h-5" />
+            </button>
 
-              <div className="bg-white rounded-2xl p-6 text-left max-w-md mx-auto mb-8 border border-gray-200 space-y-3 text-sm text-slate-700 shadow-xs">
-                <div className="flex justify-between">
-                  <span className="text-gray-500">Jurisdiction:</span>
-                  <span className="font-bold capitalize">{formData.jurisdiction}</span>
+            <div className="p-6 sm:p-8">
+              {/* PROGRESS BAR HEADER */}
+              {step <= 5 && (
+                <div className="mb-6 pr-6">
+                  <span className="text-xs font-bold text-[#0C69D0] block mb-1.5">
+                    {getProgressPercentage()}%
+                  </span>
+                  <div className="w-full bg-gray-100 h-1.5 rounded-full overflow-hidden">
+                    <div
+                      className="bg-[#0C69D0] h-full rounded-full transition-all duration-300"
+                      style={{ width: `${getProgressPercentage()}%` }}
+                    ></div>
+                  </div>
                 </div>
-                <div className="flex justify-between">
-                  <span className="text-gray-500">Business Activity:</span>
-                  <span className="font-bold capitalize">{formData.activityType}</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-gray-500">Visas Required:</span>
-                  <span className="font-bold">{formData.visas}</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-gray-500">Shareholders:</span>
-                  <span className="font-bold">{formData.shareholders}</span>
-                </div>
-              </div>
+              )}
 
-              <p className="text-sm text-gray-500 mb-8">
-                Our business setup advisor will send your official fee breakdown to <strong className="text-dark">{formData.email}</strong> and reach out to <strong className="text-dark">{formData.phone}</strong> shortly.
-              </p>
+              {/* STEP 1: SELECT A BUSINESS ACTIVITY (20%) */}
+              {step === 1 && (
+                <div className="space-y-5">
+                  <label className="block text-sm font-bold text-gray-900">
+                    Select a Business Activity <span className="text-red-500">*</span>
+                  </label>
 
-              <button
-                onClick={() => {
-                  setSubmitted(false);
-                  setFormData({ jurisdiction: "freezone", activityType: "commercial", visas: 1, shareholders: 1, officeType: "flexi-desk", name: "", email: "", phone: "", notes: "" });
-                }}
-                className="bg-primary hover:bg-primary-dark text-white text-sm font-bold px-8 py-3.5 rounded-xl transition-all shadow-sm"
-              >
-                Submit Another Calculation Request
-              </button>
-            </motion.div>
-          ) : (
-            <form onSubmit={handleSubmit} className="space-y-10">
-              {/* Step 1: Business Parameters */}
-              <div className="bg-gray-light rounded-3xl p-6 sm:p-8 shadow-xs border border-gray-100">
-                <h3 className="text-xl font-extrabold text-dark mb-6 font-cabinet flex items-center gap-2">
-                  <Building2 className="w-5 h-5 text-primary" /> 1. Select Business Parameters
-                </h3>
+                  <div className="relative">
+                    <div
+                      onClick={() => setIsActivityDropdownOpen(!isActivityDropdownOpen)}
+                      className="w-full border border-gray-300 rounded-lg px-4 py-3 flex items-center justify-between cursor-pointer bg-white hover:border-[#0C69D0] transition-colors text-sm text-gray-700"
+                    >
+                      <span>{activity || "Search or select an activity..."}</span>
+                      <ChevronDown className="w-4 h-4 text-gray-400" />
+                    </div>
 
-                <div className="space-y-6">
-                  {/* Jurisdiction */}
+                    {isActivityDropdownOpen && (
+                      <div className="absolute top-full left-0 right-0 mt-1 bg-white border border-gray-200 rounded-lg shadow-lg z-30 max-h-56 overflow-y-auto p-2">
+                        <div className="relative mb-2">
+                          <Search className="w-4 h-4 text-gray-400 absolute left-3 top-2.5" />
+                          <input
+                            type="text"
+                            placeholder="Search activity..."
+                            value={activitySearch}
+                            onChange={(e) => setActivitySearch(e.target.value)}
+                            className="w-full pl-8 pr-3 py-1.5 bg-gray-50 border border-gray-200 rounded text-xs outline-none focus:border-[#0C69D0]"
+                            autoFocus
+                          />
+                        </div>
+                        {filteredActivities.map((act, i) => (
+                          <div
+                            key={i}
+                            onClick={() => {
+                              setActivity(act);
+                              setIsActivityDropdownOpen(false);
+                            }}
+                            className={`px-3 py-2 text-xs rounded cursor-pointer transition-colors ${
+                              activity === act ? "bg-blue-50 text-[#0C69D0] font-semibold" : "text-gray-700 hover:bg-gray-50"
+                            }`}
+                          >
+                            {act}
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="pt-4 flex justify-end">
+                    <button
+                      onClick={handleNext}
+                      className="bg-[#0C69D0] hover:bg-[#0A56AD] text-white font-bold px-7 py-2.5 rounded-lg text-sm transition-all cursor-pointer shadow-sm"
+                    >
+                      Next
+                    </button>
+                  </div>
+                </div>
+              )}
+
+              {/* STEP 2: LOCATION & JURISDICTION (40%) */}
+              {step === 2 && (
+                <div className="space-y-5">
                   <div>
-                    <label className="block text-sm font-bold text-slate-800 mb-3">Choose Jurisdiction</label>
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                      {jurisdictions.map((j) => (
-                        <button
-                          key={j.value}
-                          type="button"
-                          onClick={() => setFormData({ ...formData, jurisdiction: j.value })}
-                          className={`p-4 rounded-xl border-2 text-left transition-all ${
-                            formData.jurisdiction === j.value ? "border-primary bg-white shadow-xs" : "border-gray-200 bg-white hover:border-primary/40"
-                          }`}
-                        >
-                          <p className="text-sm font-bold text-dark">{j.label}</p>
-                          <p className="text-xs text-gray-500 mt-1">{j.desc}</p>
-                        </button>
-                      ))}
+                    <label className="block text-xs font-bold text-gray-900 mb-2.5">
+                      Business Location <span className="text-red-500">*</span>
+                    </label>
+                    <div className="flex flex-wrap gap-2">
+                      {locations.map((loc) => {
+                        const isSelected = location === loc;
+                        return (
+                          <button
+                            key={loc}
+                            type="button"
+                            onClick={() => setLocation(loc)}
+                            className={`px-4 py-1.5 text-xs font-medium rounded-full border transition-all cursor-pointer ${
+                              isSelected
+                                ? "border-[#0C69D0] text-[#0C69D0] bg-blue-50"
+                                : "border-gray-200 text-gray-700 hover:border-gray-300 bg-white"
+                            }`}
+                          >
+                            {loc}
+                          </button>
+                        );
+                      })}
                     </div>
                   </div>
 
-                  {/* Business Activity Type */}
                   <div>
-                    <label className="block text-sm font-bold text-slate-800 mb-3">Primary Business Activity</label>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                      {activityTypes.map((act) => (
-                        <button
-                          key={act.value}
-                          type="button"
-                          onClick={() => setFormData({ ...formData, activityType: act.value })}
-                          className={`p-3.5 rounded-xl border-2 text-left text-sm font-semibold transition-all ${
-                            formData.activityType === act.value ? "border-primary bg-white text-primary shadow-xs" : "border-gray-200 bg-white text-gray-700 hover:border-primary/40"
-                          }`}
-                        >
-                          {act.label}
-                        </button>
-                      ))}
+                    <label className="block text-xs font-bold text-gray-900 mb-2.5">
+                      Select A Jurisdiction <span className="text-red-500">*</span>
+                    </label>
+                    <div className="flex flex-wrap gap-2">
+                      {jurisdictions.map((jur) => {
+                        const isSelected = jurisdiction === jur;
+                        return (
+                          <button
+                            key={jur}
+                            type="button"
+                            onClick={() => setJurisdiction(jur)}
+                            className={`px-4 py-1.5 text-xs font-medium rounded-full border transition-all cursor-pointer ${
+                              isSelected
+                                ? "border-[#0C69D0] text-[#0C69D0] bg-blue-50"
+                                : "border-gray-200 text-gray-700 hover:border-gray-300 bg-white"
+                            }`}
+                          >
+                            {jur}
+                          </button>
+                        );
+                      })}
                     </div>
                   </div>
 
-                  {/* Visas & Shareholders Sliders */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-2">
-                    <div className="bg-white p-4 rounded-2xl border border-gray-200">
-                      <div className="flex justify-between items-center mb-2">
-                        <label className="text-xs font-bold text-slate-700 flex items-center gap-1.5"><Users className="w-4 h-4 text-primary" /> Residence Visas Required</label>
-                        <span className="text-sm font-extrabold text-primary font-cabinet">{formData.visas}</span>
-                      </div>
-                      <input
-                        type="range"
-                        min="0"
-                        max="10"
-                        value={formData.visas}
-                        onChange={(e) => setFormData({ ...formData, visas: Number(e.target.value) })}
-                        className="w-full accent-[#0C69D0]"
-                      />
-                      <div className="flex justify-between text-[11px] text-gray-400 mt-1">
-                        <span>0 Visas</span>
-                        <span>10 Visas</span>
-                      </div>
-                    </div>
-
-                    <div className="bg-white p-4 rounded-2xl border border-gray-200">
-                      <div className="flex justify-between items-center mb-2">
-                        <label className="text-xs font-bold text-slate-700 flex items-center gap-1.5"><Users className="w-4 h-4 text-primary" /> Number of Shareholders</label>
-                        <span className="text-sm font-extrabold text-primary font-cabinet">{formData.shareholders}</span>
-                      </div>
-                      <input
-                        type="range"
-                        min="1"
-                        max="5"
-                        value={formData.shareholders}
-                        onChange={(e) => setFormData({ ...formData, shareholders: Number(e.target.value) })}
-                        className="w-full accent-[#0C69D0]"
-                      />
-                      <div className="flex justify-between text-[11px] text-gray-400 mt-1">
-                        <span>1 Shareholder</span>
-                        <span>5+ Shareholders</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Office Space Requirement */}
-                  <div>
-                    <label className="block text-sm font-bold text-slate-800 mb-3">Office Space Preference</label>
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                      {officeTypes.map((off) => (
-                        <button
-                          key={off.value}
-                          type="button"
-                          onClick={() => setFormData({ ...formData, officeType: off.value })}
-                          className={`p-3.5 rounded-xl border-2 text-center text-xs font-bold transition-all ${
-                            formData.officeType === off.value ? "border-primary bg-white text-primary shadow-xs" : "border-gray-200 bg-white text-gray-700 hover:border-primary/40"
-                          }`}
-                        >
-                          {off.label}
-                        </button>
-                      ))}
-                    </div>
+                  <div className="pt-4 flex justify-between items-center">
+                    <button
+                      onClick={handlePrevious}
+                      className="bg-gray-100 hover:bg-gray-200 text-gray-600 font-medium px-5 py-2 rounded-lg text-xs transition-all cursor-pointer"
+                    >
+                      Previous
+                    </button>
+                    <button
+                      onClick={handleNext}
+                      className="bg-[#0C69D0] hover:bg-[#0A56AD] text-white font-bold px-7 py-2 rounded-lg text-xs transition-all cursor-pointer shadow-sm"
+                    >
+                      Next
+                    </button>
                   </div>
                 </div>
-              </div>
+              )}
 
-              {/* Step 2: Contact Form to Submit Calculation */}
-              <div className="bg-gray-light rounded-3xl p-6 sm:p-8 shadow-xs border border-gray-100 space-y-6">
-                <h3 className="text-xl font-extrabold text-dark font-cabinet flex items-center gap-2">
-                  <User className="w-5 h-5 text-primary" /> 2. Enter Contact Info to Receive Full Cost Calculation
-                </h3>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {/* STEP 3: OWNERS & OFFICE (60%) */}
+              {step === 3 && (
+                <div className="space-y-5">
                   <div>
-                    <label className="block text-sm font-semibold text-slate-700 mb-1.5">
-                      Full Name <span className="text-red-500">*</span>
+                    <label className="block text-xs font-bold text-gray-900 mb-2.5">
+                      Number of Owners <span className="text-red-500">*</span>
+                    </label>
+                    <div className="flex flex-wrap gap-2">
+                      {ownerOptions.map((opt) => {
+                        const isSelected = owners === opt;
+                        return (
+                          <button
+                            key={opt}
+                            type="button"
+                            onClick={() => setOwners(opt)}
+                            className={`px-4 py-1.5 text-xs font-medium rounded-full border transition-all cursor-pointer ${
+                              isSelected
+                                ? "border-[#0C69D0] text-[#0C69D0] bg-blue-50"
+                                : "border-gray-200 text-gray-700 hover:border-gray-300 bg-white"
+                            }`}
+                          >
+                            {opt}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-bold text-gray-900 mb-2.5">
+                      Do you require office space? <span className="text-red-500">*</span>
+                    </label>
+                    <div className="flex flex-wrap gap-2">
+                      {officeOptions.map((opt) => {
+                        const isSelected = office === opt;
+                        return (
+                          <button
+                            key={opt}
+                            type="button"
+                            onClick={() => setOffice(opt)}
+                            className={`px-4 py-1.5 text-xs font-medium rounded-full border transition-all cursor-pointer ${
+                              isSelected
+                                ? "border-[#0C69D0] text-[#0C69D0] bg-blue-50"
+                                : "border-gray-200 text-gray-700 hover:border-gray-300 bg-white"
+                            }`}
+                          >
+                            {opt}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+
+                  <div className="pt-4 flex justify-between items-center">
+                    <button
+                      onClick={handlePrevious}
+                      className="bg-gray-100 hover:bg-gray-200 text-gray-600 font-medium px-5 py-2 rounded-lg text-xs transition-all cursor-pointer"
+                    >
+                      Previous
+                    </button>
+                    <button
+                      onClick={handleNext}
+                      className="bg-[#0C69D0] hover:bg-[#0A56AD] text-white font-bold px-7 py-2 rounded-lg text-xs transition-all cursor-pointer shadow-sm"
+                    >
+                      Next
+                    </button>
+                  </div>
+                </div>
+              )}
+
+              {/* STEP 4: VISAS & BUSINESS NAME (80%) */}
+              {step === 4 && (
+                <div className="space-y-5">
+                  <div>
+                    <label className="block text-xs font-bold text-gray-900 mb-2.5">
+                      How many visas do you require? <span className="text-red-500">*</span>
+                    </label>
+                    <div className="flex flex-wrap gap-2">
+                      {visaOptions.map((opt) => {
+                        const isSelected = visas === opt;
+                        return (
+                          <button
+                            key={opt}
+                            type="button"
+                            onClick={() => setVisas(opt)}
+                            className={`px-3.5 py-1.5 text-xs font-medium rounded-full border transition-all cursor-pointer ${
+                              isSelected
+                                ? "border-[#0C69D0] text-[#0C69D0] bg-blue-50"
+                                : "border-gray-200 text-gray-700 hover:border-gray-300 bg-white"
+                            }`}
+                          >
+                            {opt}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-bold text-gray-900 mb-2">
+                      Have you thought of a name for your business? <span className="text-red-500">*</span>
                     </label>
                     <input
                       type="text"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      placeholder="Your full name"
-                      className={`w-full rounded-xl border px-4 py-3 text-sm font-medium text-slate-800 outline-none focus:border-[#0C69D0] focus:ring-1 focus:ring-[#0C69D0] ${
-                        errors.name ? "border-red-500" : "border-slate-200"
+                      placeholder="Enter business name (Optional)"
+                      value={businessName}
+                      onChange={(e) => setBusinessName(e.target.value)}
+                      className="w-full border border-gray-300 rounded-lg px-3.5 py-2.5 text-xs text-gray-800 outline-none focus:border-[#0C69D0] transition-colors"
+                    />
+                  </div>
+
+                  <div className="pt-4 flex justify-between items-center">
+                    <button
+                      onClick={handlePrevious}
+                      className="bg-gray-100 hover:bg-gray-200 text-gray-600 font-medium px-5 py-2 rounded-lg text-xs transition-all cursor-pointer"
+                    >
+                      Previous
+                    </button>
+                    <button
+                      onClick={handleNext}
+                      className="bg-[#0C69D0] hover:bg-[#0A56AD] text-white font-bold px-7 py-2 rounded-lg text-xs transition-all cursor-pointer shadow-sm"
+                    >
+                      Next
+                    </button>
+                  </div>
+                </div>
+              )}
+
+              {/* STEP 5: LEAD CONTACT FORM (100%) */}
+              {step === 5 && (
+                <form onSubmit={handleFinalSubmit} className="space-y-3.5">
+                  <h3 className="text-sm font-bold text-gray-900 mb-1">
+                    Get Your Cost Calculation
+                  </h3>
+                  <p className="text-xs text-gray-500 mb-3">
+                    Enter your contact details to view the estimated breakdown.
+                  </p>
+
+                  <div>
+                    <label className="block text-[11px] font-bold text-gray-700 uppercase mb-1">Full Name *</label>
+                    <input
+                      type="text"
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                      placeholder="Enter your name"
+                      className={`w-full border rounded-lg px-3 py-2 text-xs outline-none ${
+                        formErrors.name ? "border-red-500 bg-red-50/20" : "border-gray-300 focus:border-[#0C69D0]"
                       }`}
                     />
-                    {errors.name && <p className="text-xs text-red-500 mt-1">{errors.name}</p>}
+                    {formErrors.name && <p className="text-[10px] text-red-500 mt-0.5">{formErrors.name}</p>}
                   </div>
 
                   <div>
-                    <label className="block text-sm font-semibold text-slate-700 mb-1.5">
-                      Business Email <span className="text-red-500">*</span>
-                    </label>
+                    <label className="block text-[11px] font-bold text-gray-700 uppercase mb-1">Email Address *</label>
                     <input
                       type="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      placeholder="you@company.com"
-                      className={`w-full rounded-xl border px-4 py-3 text-sm font-medium text-slate-800 outline-none focus:border-[#0C69D0] focus:ring-1 focus:ring-[#0C69D0] ${
-                        errors.email ? "border-red-500" : "border-slate-200"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="name@company.com"
+                      className={`w-full border rounded-lg px-3 py-2 text-xs outline-none ${
+                        formErrors.email ? "border-red-500 bg-red-50/20" : "border-gray-300 focus:border-[#0C69D0]"
                       }`}
                     />
-                    {errors.email && <p className="text-xs text-red-500 mt-1">{errors.email}</p>}
+                    {formErrors.email && <p className="text-[10px] text-red-500 mt-0.5">{formErrors.email}</p>}
                   </div>
+
+                  <div>
+                    <label className="block text-[11px] font-bold text-gray-700 uppercase mb-1">Phone / WhatsApp Number *</label>
+                    <input
+                      type="tel"
+                      value={phone}
+                      onChange={(e) => setPhone(e.target.value)}
+                      placeholder="+971 58 595 2349 or +91 9319650940"
+                      className={`w-full border rounded-lg px-3 py-2 text-xs outline-none ${
+                        formErrors.phone ? "border-red-500 bg-red-50/20" : "border-gray-300 focus:border-[#0C69D0]"
+                      }`}
+                    />
+                    {formErrors.phone && <p className="text-[10px] text-red-500 mt-0.5">{formErrors.phone}</p>}
+                  </div>
+
+                  <div className="pt-3 flex justify-between items-center">
+                    <button
+                      type="button"
+                      onClick={handlePrevious}
+                      className="bg-gray-100 hover:bg-gray-200 text-gray-600 font-medium px-5 py-2 rounded-lg text-xs transition-all cursor-pointer"
+                    >
+                      Previous
+                    </button>
+                    <button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="bg-[#0C69D0] hover:bg-[#0A56AD] text-white font-bold px-7 py-2 rounded-lg text-xs transition-all cursor-pointer shadow-sm"
+                    >
+                      {isSubmitting ? "Calculating..." : "Calculate Costs"}
+                    </button>
+                  </div>
+                </form>
+              )}
+
+              {/* STEP 6: CALCULATION RESULT */}
+              {step === 6 && (
+                <div className="text-center space-y-5">
+                  <div className="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto">
+                    <CheckCircle2 className="w-7 h-7 stroke-[2.5]" />
+                  </div>
+
+                  <div>
+                    <span className="inline-block px-2.5 py-0.5 bg-emerald-50 text-emerald-700 text-[10px] font-bold rounded-full mb-1.5 border border-emerald-200">
+                      Calculation Complete
+                    </span>
+                    <h3 className="text-xl font-bold text-gray-900 font-cabinet">
+                      Estimated Setup Cost
+                    </h3>
+                  </div>
+
+                  <div className="bg-blue-50/60 border border-blue-200 rounded-xl p-4 text-center">
+                    <p className="text-[11px] text-gray-500 mb-0.5">Estimated Setup Range</p>
+                    <p className="text-2xl font-black text-[#0C69D0] font-cabinet">
+                      AED {result.min} - {result.max}
+                    </p>
+                  </div>
+
+                  <div className="bg-gray-50 rounded-lg p-3.5 border border-gray-200 text-left text-xs space-y-1 text-gray-600">
+                    <p className="font-bold text-gray-900 mb-1 border-b pb-1">Selection Summary:</p>
+                    <p>• Location & Jurisdiction: {location} ({jurisdiction})</p>
+                    <p>• Activity: {activity || "Commercial & Trading"}</p>
+                    <p>• Visas & Owners: {visas} Visas | {owners} Owners</p>
+                    <p>• Office Space: {office === "Yes" ? "Required" : "Not Required"}</p>
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-2 pt-1">
+                    <a
+                      href={contactInfo.uaePhoneHref}
+                      className="py-2 px-3 rounded-lg bg-gray-900 text-white font-bold text-[11px] flex items-center justify-center gap-1"
+                    >
+                      <Phone className="w-3 h-3 text-blue-400" />
+                      <span>UAE: {contactInfo.uaePhone}</span>
+                    </a>
+                    <a
+                      href={contactInfo.indiaPhoneHref}
+                      className="py-2 px-3 rounded-lg bg-[#0C69D0] text-white font-bold text-[11px] flex items-center justify-center gap-1"
+                    >
+                      <Phone className="w-3 h-3 text-[#FBBC05]" />
+                      <span>India: {contactInfo.indiaPhone}</span>
+                    </a>
+                  </div>
+
+                  <button
+                    onClick={() => setStep(1)}
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-[#0C69D0] hover:underline pt-1 cursor-pointer"
+                  >
+                    <RotateCcw className="w-3 h-3" />
+                    <span>Recalculate with different options</span>
+                  </button>
                 </div>
-
-                <div>
-                  <label className="block text-sm font-semibold text-slate-700 mb-1.5">
-                    Phone / WhatsApp Number <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="tel"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    placeholder="+971 50 000 0000 or +91 90000 00000"
-                    className={`w-full rounded-xl border px-4 py-3 text-sm font-medium text-slate-800 outline-none focus:border-[#0C69D0] focus:ring-1 focus:ring-[#0C69D0] ${
-                      errors.phone ? "border-red-500" : "border-slate-200"
-                    }`}
-                  />
-                  {errors.phone && <p className="text-xs text-red-500 mt-1">{errors.phone}</p>}
-                </div>
-
-                <div>
-                  <label className="block text-sm font-semibold text-slate-700 mb-1.5">Additional Notes (Optional)</label>
-                  <textarea
-                    name="notes"
-                    value={formData.notes}
-                    onChange={handleChange}
-                    rows="3"
-                    placeholder="Tell us any specific requirements, timeline, or preferred free zone..."
-                    className="w-full rounded-xl border border-slate-200 px-4 py-3 text-sm font-medium text-slate-800 outline-none focus:border-[#0C69D0] focus:ring-1 focus:ring-[#0C69D0] resize-none"
-                  ></textarea>
-                </div>
-
-                <button
-                  type="submit"
-                  className="w-full inline-flex items-center justify-center gap-2 bg-[#0C69D0] hover:bg-[#0A56AD] text-white text-base font-bold px-8 py-4 rounded-xl transition-all duration-300 shadow-md hover:shadow-lg"
-                >
-                  <CalcIcon className="w-5 h-5" /> Calculate & Send Detailed Breakdown <Send className="w-4 h-4 ml-1" />
-                </button>
-
-                <p className="text-xs text-gray-500 text-center font-medium flex items-center justify-center gap-1.5">
-                  <ShieldCheck className="w-4 h-4 text-emerald-600" /> Your information is 100% confidential. Official fee breakdown will be sent directly to you.
-                </p>
-              </div>
-            </form>
-          )}
+              )}
+            </div>
+          </div>
         </div>
-      </section>
-    </>
+      )}
+    </div>
   );
 };
 
